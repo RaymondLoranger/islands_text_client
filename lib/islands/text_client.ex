@@ -1,6 +1,7 @@
-# ┌─────────────────────────────────────────────────────────────────┐
-# │ Inspired by the course "Elixir for Programmers" by Dave Thomas. │
-# └─────────────────────────────────────────────────────────────────┘
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │ Inspired by the book "Functional Web Development" by Lance Halvorsen │
+# │ and the course "Elixir for Programmers" by Dave Thomas.              │
+# └──────────────────────────────────────────────────────────────────────┘
 defmodule Islands.TextClient do
   use PersistConfig
 
