@@ -2,9 +2,9 @@
 
 **TODO: Add description**
 
-**<small>Inspired by:</small>**
-* <sub>the book [Functional Web Development](https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen</sub>
-* <sub>the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers) by Dave Thomas</sub>
+**<sup>Inspired by:</sup>**
+* <sup>the book [Functional Web Development](https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen</sup>
+* <sup>the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers) by Dave Thomas</sup>
 
 ## Installation
 
