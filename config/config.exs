@@ -31,4 +31,3 @@ config :io_ansi_table, style: :game
 #     import_config "#{Mix.env}.exs"
 import_config "persist.exs"
 import_config "persist_book_ref.exs"
-import_config "persist_course_ref.exs"

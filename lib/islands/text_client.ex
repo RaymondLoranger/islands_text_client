@@ -6,13 +6,11 @@ defmodule Islands.TextClient do
   use PersistConfig
 
   @book_ref Application.get_env(@app, :book_ref)
-  @course_ref Application.get_env(@app, :course_ref)
 
   @moduledoc """
   Text client for the Islands game.
 
   ##### #{@book_ref}
-  ##### #{@course_ref}
   """
 
   alias __MODULE__.Interact
