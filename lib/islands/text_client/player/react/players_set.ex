@@ -28,4 +28,5 @@ defmodule Islands.TextClient.Player.React.PlayersSet do
   end
 
   def maybe_wait(%State{} = state), do: state
+  # put_in(state.tally, Engine.tally(state.game_name, state.player_id))
 end

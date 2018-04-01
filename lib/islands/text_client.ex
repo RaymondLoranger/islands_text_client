@@ -10,7 +10,9 @@ defmodule Islands.TextClient do
   @moduledoc """
   Text client for the Islands game.
 
-  ##### #{@book_and_course_ref}
+  ##### Inspired by:
+  ##### - #{@book_and_course_ref}
+  ##### - #{@book_and_course_ref}
   """
 
   alias __MODULE__.Interact
