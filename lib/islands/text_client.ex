@@ -1,18 +1,18 @@
-# ┌──────────────────────────────────────────────────────────────────────┐
-# │ Inspired by the book "Functional Web Development" by Lance Halvorsen │
-# │ and the course "Elixir for Programmers" by Dave Thomas.              │
-# └──────────────────────────────────────────────────────────────────────┘
+# ┌───────────────────────────────────────────────────────────────────────┐
+# │ Inspired by the book "Functional Web Development" by Lance Halvorsen. │
+# │ Also inspired by the course "Elixir for Programmers" by Dave Thomas.  │           │
+# └───────────────────────────────────────────────────────────────────────┘
 defmodule Islands.TextClient do
   use PersistConfig
 
-  @book_and_course_ref Application.get_env(@app, :book_and_course_ref)
+  @book_ref Application.get_env(@app, :book_ref)
+  @course_ref Application.get_env(@app, :course_ref)
 
   @moduledoc """
   Text client for the Islands game.
 
-  Inspired by:
-  - #{@book_and_course_ref}
-  - #{@book_and_course_ref}
+  ##### #{@book_ref}
+  ##### #{@course_ref}
   """
 
   alias __MODULE__.Interact
