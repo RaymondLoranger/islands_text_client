@@ -1,8 +1,10 @@
 defmodule Islands.TextClient.Player.React.PlayersSet do
   @moduledoc false
 
+  alias Islands.Engine
   alias Islands.Engine.Tally
-  alias Islands.TextClient.{Player.React.Wait, State, Summary}
+  alias Islands.TextClient.Player.React.Wait
+  alias Islands.TextClient.{State, Summary}
 
   @spec maybe_wait(State.t()) :: State.t()
   def maybe_wait(
@@ -27,6 +29,7 @@ defmodule Islands.TextClient.Player.React.PlayersSet do
     |> Wait.for(:player2_turn, "your opponent to set islands and play")
   end
 
-  def maybe_wait(%State{} = state), do: state
-  # put_in(state.tally, Engine.tally(state.game_name, state.player_id))
+  def maybe_wait(%State{} = state) do
+    put_in(state.tally, Engine.tally(state.game_name, state.player_id))
+  end
 end
