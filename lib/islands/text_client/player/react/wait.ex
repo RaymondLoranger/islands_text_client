@@ -26,7 +26,6 @@ defmodule Islands.TextClient.Player.React.Wait do
   defp wait_for(:players_set) do
     receive do
       :players_set -> :ok
-      :game_over -> :ok
     end
   end
 

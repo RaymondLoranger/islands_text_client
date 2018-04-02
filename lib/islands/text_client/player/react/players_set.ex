@@ -29,7 +29,5 @@ defmodule Islands.TextClient.Player.React.PlayersSet do
     |> Wait.for(:player2_turn, "your opponent to set islands and play")
   end
 
-  def maybe_wait(%State{} = state) do
-    put_in(state.tally, Engine.tally(state.game_name, state.player_id))
-  end
+  def maybe_wait(%State{} = state), do: state
 end

@@ -23,7 +23,7 @@ defmodule Islands.TextClient.Player.React.GameOver.Message.Stop do
     [
       :fuchsia_background,
       :light_white,
-      "\n#{state.player_name}, your opponent gave up."
+      "#{state.player_name}, your opponent gave up."
     ]
   end
 end
