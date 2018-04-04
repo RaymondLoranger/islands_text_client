@@ -20,7 +20,17 @@ defmodule Islands.TextClient.Summary.Message.AllIslandsPositioned do
       :dark_green_background,
       :light_white,
       "#{Island.for(island_type)} positioned at #{Point.for(row, col)}. ",
-      "ALL POSITIONED."
+      "ALL ISLANDS POSITIONED."
+    ]
+  end
+
+  def message(%State{
+        tally: %Tally{request: {:position_all_islands, _player_id}}
+      }) do
+    [
+      :dark_green_background,
+      :light_white,
+      "ALL ISLANDS POSITIONED."
     ]
   end
 end

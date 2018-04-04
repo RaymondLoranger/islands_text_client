@@ -37,6 +37,11 @@ defmodule Islands.TextClient.Input do
              do: put_in(state.move, [row, col]),
              else: (_ -> Prompter.accept_move(state, @valid_move_message))
 
+      [] ->
+        row = Enum.random(@board_range)
+        col = Enum.random(@board_range)
+        put_in(state.move, [row, col])
+
       [move] when move in ["all", "set", "stop"] ->
         put_in(state.move, [move])
 
