@@ -22,6 +22,12 @@ defmodule Islands.TextClient.Mover do
     put_in(state.tally, tally)
   end
 
+  def make_move(%State{move: ["all"]} = state) do
+    %State{game_name: game_name, player_id: player_id} = state
+    tally = Engine.position_all_islands(game_name, player_id)
+    put_in(state.tally, tally)
+  end
+
   def make_move(%State{move: [row, col]} = state)
       when row in @board_range and col in @board_range do
     %State{game_name: game_name, player_id: player_id} = state

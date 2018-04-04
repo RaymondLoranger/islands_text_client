@@ -37,7 +37,7 @@ defmodule Islands.TextClient.Input do
              do: put_in(state.move, [row, col]),
              else: (_ -> Prompter.accept_move(state, @valid_move_message))
 
-      [move] when move in ["set", "stop"] ->
+      [move] when move in ["all", "set", "stop"] ->
         put_in(state.move, [move])
 
       ["help"] ->
