@@ -3,14 +3,16 @@ defmodule Islands.TextClient.Player.React do
 
   alias Islands.Engine.State, as: StateMachine
 
-  alias Islands.TextClient.{
-    Player.React.GameOver,
-    Player.React.Initialized,
-    Player.React.Player1Turn,
-    Player.React.Player2Turn,
-    Player.React.PlayersSet,
+  alias Islands.TextClient.Player.React.{
+    GameOver,
+    Initialized,
+    Player1Turn,
+    Player2Turn,
+    PlayersSet,
     State
   }
+
+  alias Islands.TextClient.State
 
   # :initialized, :players_set, :player1_turn, :player2_turn, :game_over
   @spec to(State.t(), StateMachine.game_state()) :: State.t() | no_return

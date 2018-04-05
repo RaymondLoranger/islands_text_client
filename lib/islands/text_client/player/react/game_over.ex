@@ -3,7 +3,8 @@ defmodule Islands.TextClient.Player.React.GameOver do
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.{Engine, Engine.Tally}
-  alias Islands.TextClient.{Player.React.GameOver.Message, State, Summary}
+  alias Islands.TextClient.Player.React.GameOver.Message
+  alias Islands.TextClient.{State, Summary}
 
   @spec end_game(State.t()) :: no_return
   def end_game(%State{} = state), do: state |> message() |> end_game(state)

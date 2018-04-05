@@ -1,7 +1,8 @@
 defmodule Islands.TextClient.Player.React.Player2Turn do
   @moduledoc false
 
-  alias Islands.TextClient.{Player.React.Wait, State, Summary}
+  alias Islands.TextClient.Player.React.Wait
+  alias Islands.TextClient.{State, Summary}
 
   @spec maybe_wait(State.t()) :: State.t()
   def maybe_wait(%State{player_id: :player1} = state) do

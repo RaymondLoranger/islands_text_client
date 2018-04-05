@@ -56,6 +56,13 @@ config :islands_text_client,
     "help"
   ]
 
+config :islands_text_client,
+  invalid_move_message: [
+    :free_speech_red_background,
+    :light_white,
+    "Please enter a valid move (or help)."
+  ]
+
 # "a" => :atoll, "d" => :dot, "l" => :l_shape, "s" => :s_shape, "q" => :square
 config :islands_text_client, island_type_codes: ["a", "d", "l", "s", "q"]
 
@@ -66,10 +73,3 @@ config :islands_text_client, island_type_codes: ["a", "d", "l", "s", "q"]
 islands_node = List.to_atom('islands@' ++ hostname)
 
 config :islands_text_client, islands_node: islands_node
-
-config :islands_text_client,
-  valid_move_message: [
-    :free_speech_red_background,
-    :light_white,
-    "Please enter a valid move (or help)."
-  ]

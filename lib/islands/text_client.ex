@@ -23,9 +23,9 @@ defmodule Islands.TextClient do
   - `iex --sname islands -S mix`
   - `:observer.start()`
 
-  Each client must run in a different node...
+  Player1 must run in her node...
   - `cd islands_text_client`
-  - `iex --sname c[lient]<n> -S mix`
+  - `iex --sname game<i>_player1 -S mix`
 
   Player 1 starts a game from her node:
   - `Islands.TextClient.start("Eve")`
@@ -34,6 +34,10 @@ defmodule Islands.TextClient do
 
   @doc """
   Lets player2 join a game.
+
+  Player2 must run in his node...
+  - `cd islands_text_client`
+  - `iex --sname game<i>_player2 -S mix`
 
   Player 2 joins a game from his node:
   - `Islands.TextClient.join("Eve", "Adam")`

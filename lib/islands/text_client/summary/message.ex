@@ -3,19 +3,19 @@ defmodule Islands.TextClient.Summary.Message do
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game
+  alias Islands.TextClient.State
 
-  alias Islands.TextClient.{
-    State,
-    Summary.Message.AllIslandsPositioned,
-    Summary.Message.Error,
-    Summary.Message.HitIslandForested,
-    Summary.Message.HitNoneForested,
-    Summary.Message.IslandPositioned,
-    Summary.Message.IslandsSet,
-    Summary.Message.MissNoneForested,
-    Summary.Message.Other,
-    Summary.Message.Player2Added,
-    Summary.Message.Stopping
+  alias Islands.TextClient.Summary.Message.{
+    AllIslandsPositioned,
+    Error,
+    HitIslandForested,
+    HitNoneForested,
+    IslandPositioned,
+    IslandsSet,
+    MissNoneForested,
+    Other,
+    Player2Added,
+    Stopping
   }
 
   @spec for(State.t(), Game.response()) :: ANSI.ansilist()

@@ -6,15 +6,9 @@ defmodule Islands.TextClient.Player do
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Tally
-
-  alias Islands.TextClient.{
-    Mover,
-    Player.React,
-    Player.React.GameOver,
-    Prompter,
-    State,
-    Summary
-  }
+  alias Islands.TextClient.Player.React
+  alias Islands.TextClient.Player.React.GameOver
+  alias Islands.TextClient.{Mover, Prompter, State, Summary}
 
   # :initialized, :players_set, :player1_turn, :player2_turn, :game_over
   @spec play(State.t()) :: no_return

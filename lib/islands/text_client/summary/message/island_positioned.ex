@@ -3,12 +3,8 @@ defmodule Islands.TextClient.Summary.Message.IslandPositioned do
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Tally
-
-  alias Islands.TextClient.{
-    State,
-    Summary.Message.Island,
-    Summary.Message.Point
-  }
+  alias Islands.TextClient.State
+  alias Islands.TextClient.Summary.Message.{Island, Point}
 
   @spec message(State.t()) :: ANSI.ansilist()
   def message(%State{

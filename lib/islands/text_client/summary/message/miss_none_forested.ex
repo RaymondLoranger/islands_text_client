@@ -3,11 +3,8 @@ defmodule Islands.TextClient.Summary.Message.MissNoneForested do
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Tally
-
-  alias Islands.TextClient.{
-    State,
-    Summary.Message.Point
-  }
+  alias Islands.TextClient.State
+  alias Islands.TextClient.Summary.Message.Point
 
   @spec message(State.t()) :: ANSI.ansilist()
   def message(%State{
