@@ -30,13 +30,13 @@ The first player starts the game from a different node:
 
   - cd islands_text_client
   - iex --sname <game1_player1> -S mix
-  - Islands.Text.start("Robin")
+  - Islands.Text.start("John")
 
 The second player joins the game from yet a different node:
 
   - cd islands_text_client
   - iex --sname <game1_player2> -S mix
-  - Islands.Text.join("Robin", "Marian")
+  - Islands.Text.join("John", "Yoko")
 
 ## Examples
 ## ![start](images/start.png)
