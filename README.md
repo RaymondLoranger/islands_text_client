@@ -6,12 +6,14 @@
 
 ## Using
 
-To play the Islands game, clone these 2 packages from GitHub and compile them:
+To play the Islands game, clone `islands_engine` from GitHub and compile it:
 
   - git clone https://github.com/RaymondLoranger/islands_engine
   - cd islands_engine
   - mix deps.get
   - mix compile
+
+Then, clone `islands_text_client` from GitHub and compile it:
 
   - git clone https://github.com/RaymondLoranger/islands_text_client
   - cd islands_text_client
