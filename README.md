@@ -38,7 +38,7 @@ The second player joins the game from yet a different node:
   - iex --sname <game1_player2> -S mix
   - Islands.Text.join("John", "Yoko")
 
-## Example of a game events in sequence
+## Example of a game's events in sequence
 ## ![engine_node](images/engine_node.png)
 ## ![player1_node](images/player1_node.png)
 ## ![player2_node](images/player2_node.png)
