@@ -38,8 +38,23 @@ The second player joins the game from yet a different node:
   - iex --sname <game1_player2> -S mix
   - Islands.Text.join("John", "Yoko")
 
-## Examples
-## ![start](images/start.png)
-## ![positioned](images/positioned.png)
-## ![all_positioned](images/all_positioned.png)
-## ![guess](images/guess.png)
+## Example of a game events in sequence
+## ![engine_node](images/engine_node.png)
+## ![player1_node](images/player1_node.png)
+## ![player2_node](images/player2_node.png)
+## ![player1_start](images/player1_start.png)
+## ![player2_join](images/player2_join.png)
+## ![player1_react_join](images/player1_react_join.png)
+## ![player1_atoll_positioned](images/player1_atoll_positioned.png)
+## ![player2_atoll_positioned](images/player2_atoll_positioned.png)
+## ![player1_square_positioned](images/player1_square_positioned.png)
+## ![player2_square_positioned](images/player2_square_positioned.png)
+## ![player1_set_islands](images/player1_set_islands.png)
+## ![player2_set_islands](images/player2_set_islands.png)
+## ![player1_react_set_islands](images/player1_react_set_islands.png)
+## ![player1_guess1](images/player1_guess1.png)
+## ![player2_react_guess1](images/player2_react_guess1.png)
+## ![player2_guess1](images/player2_guess1.png)
+## ![player1_react_guess1](images/player1_react_guess1.png)
+## ![player1_atoll_forested](images/player1_atoll_forested.png)
+## ![player2_react_atoll_forested](images/player2_react_atoll_forested.png)
