@@ -30,13 +30,13 @@ The first player starts the game from a different node:
 
   - cd islands_text_client
   - iex --sname <game1_player1> -S mix
-  - Islands.TextClient.start("<player1>")
+  - Islands.TextClient.start(<"player1">)
 
 The second player joins the game from yet another node:
 
   - cd islands_text_client
   - iex --sname <game1_player2> -S mix
-  - Islands.TextClient.join("<player1>", "<player2>")
+  - Islands.TextClient.join(<"player1">, <"player2">)
 
 ## Example of a game's events in sequence
 ## ![engine_node](images/engine_node.png)
