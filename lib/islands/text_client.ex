@@ -8,7 +8,7 @@ defmodule Islands.TextClient do
   @book_ref Application.get_env(@app, :book_ref)
 
   @moduledoc """
-  Text client for the Islands game.
+  Text client for the Game of Islands.
 
   ##### #{@book_ref}
   """
