@@ -68,12 +68,12 @@ The second player joins the game from node `:game1_player2@<hostname>`:
 ## ![player2_join](images/player2_join.png)
 A feedback will notify player1 that an opponent joined the game:
 ## ![player1_react_join](images/player1_react_join.png)
-Each player must then position their 5 islands on their own board:
+Each player must then position all 5 islands on the board:
 ## ![player1_atoll_positioned](images/player1_atoll_positioned.png)
 ## ![player2_atoll_positioned](images/player2_atoll_positioned.png)
 ## ![player1_square_positioned](images/player1_square_positioned.png)
 ## ![player2_square_positioned](images/player2_square_positioned.png)
-Each player must then declare their islands "set":
+Each player must then declare the islands "set":
 ## ![player1_set_islands](images/player1_set_islands.png)
 ## ![player2_set_islands](images/player2_set_islands.png)
 ## ![player1_react_set_islands](images/player1_react_set_islands.png)
