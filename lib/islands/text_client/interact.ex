@@ -15,7 +15,8 @@ defmodule Islands.TextClient.Interact do
   end
 
   @spec join(String.t(), String.t()) :: no_return
-  def join(game_name, player_name) do
+  def join(game_name, player_name)
+      when is_binary(game_name) and is_binary(player_name) do
     game_name
     |> RemoteProcedureCall.add_player(player_name)
     |> State.init(:player2, player_name)
