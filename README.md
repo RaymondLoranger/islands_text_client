@@ -1,5 +1,7 @@
 # Islands Text Client
 
+[![Build Status](https://travis-ci.org/RaymondLoranger/islands_text_client.svg?branch=master)](https://travis-ci.org/RaymondLoranger/islands_text_client)
+
 Text client for the Game of Islands.
 
 It’s a game for two players, and each player has a board, which consists of a
