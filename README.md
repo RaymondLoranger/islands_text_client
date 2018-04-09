@@ -41,23 +41,23 @@ Then, clone `islands_text_client` from GitHub and compile it:
   - mix deps.get
   - mix compile
 
-From folder `islands_engine`, you would then run the engine in node `:islands@<hostname>` soecifying short name **islands** (required):
+From folder `islands_engine`, you then run the engine in node `:islands@<hostname>` specifying short name **islands**:
 
   - cd islands_engine
   - iex --sname **islands** -S mix
   - :observer.start() # optional to observe the game(s) being played
 
-The first player (player1) starts the game from a different node with a short name of his choice (here **game1_player1**):
+The first player (player1) starts the game from a different node with any short name (here **game1_player1**):
 
   - cd islands_text_client
   - iex --sname **game1_player1** -S mix
-  - Islands.TextClient.start("__player1_name__")
+  - Islands.TextClient.start("**_player1_name_**")
 
-The second player (player2) joins the game from yet another node with a short name of her choice (here **game1_player2**):
+The second player (player2) joins the game from yet another node with any short name (here **game1_player2**):
 
   - cd islands_text_client
   - iex --sname **game1_player2** -S mix
-  - Islands.TextClient.join("__player1_name__", "__player2_name__")
+  - Islands.TextClient.join("**_player1_name_**", "**_player2_name_**")
 
 Any number of games can be played simultaneously in this fashion.
 
