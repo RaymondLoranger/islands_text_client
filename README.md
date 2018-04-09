@@ -41,45 +41,47 @@ Then, clone `islands_text_client` from GitHub and compile it:
   - mix deps.get
   - mix compile
 
-From folder `islands_engine`, run the engine in node `:islands@<hostname>`:
+From folder `islands_engine`, you would then run the engine in node `:islands@<hostname>` soecifying short name **islands** (required):
 
   - cd islands_engine
-  - iex --sname islands -S mix
-  - :observer.start() # optional
+  - iex --sname **islands** -S mix
+  - :observer.start() # optional to observe the game(s) being played
 
-The first player starts the game from a different node:
-
-  - cd islands_text_client
-  - iex --sname <game1_player1> -S mix
-  - Islands.TextClient.start(<"player1">)
-
-The second player joins the game from yet another node:
+The first player (player1) starts the game from a different node with a short name of his choice (here **game1_player1**):
 
   - cd islands_text_client
-  - iex --sname <game1_player2> -S mix
-  - Islands.TextClient.join(<"player1">, <"player2">)
+  - iex --sname **game1_player1** -S mix
+  - Islands.TextClient.start("__player1_name__")
+
+The second player (player2) joins the game from yet another node with a short name of her choice (here **game1_player2**):
+
+  - cd islands_text_client
+  - iex --sname **game1_player2** -S mix
+  - Islands.TextClient.join("__player1_name__", "__player2_name__")
+
+Any number of games can be played simultaneously in this fashion.
 
 ## Example of a game's events in sequence
-We start the Islands Engine in node `:islands@<hostname>`:
+We start the Islands Engine specifying short name **islands** (required):
 ## ![engine_node](images/engine_node.png)
-The first player starts the game from node `:game1_player1@<hostname>`:
+Player1 starts the game specifying short name **game1_player1** (for example):
 ## ![player1_node](images/player1_node.png)
 ## ![player1_start](images/player1_start.png)
-The second player joins the game from node `:game1_player2@<hostname>`:
+Player2 joins the game specifying short name **game1_player2** (for example):
 ## ![player2_node](images/player2_node.png)
 ## ![player2_join](images/player2_join.png)
-A feedback will notify player1 that an opponent joined the game:
+A feedback will notify player1 that an opponent has joined the game:
 ## ![player1_react_join](images/player1_react_join.png)
-Each player must then position all 5 islands on the board:
+Each player must then position the 5 islands on the board (in any order):
 ## ![player1_atoll_positioned](images/player1_atoll_positioned.png)
 ## ![player2_atoll_positioned](images/player2_atoll_positioned.png)
 ## ![player1_square_positioned](images/player1_square_positioned.png)
 ## ![player2_square_positioned](images/player2_square_positioned.png)
-Each player must then declare the islands "set":
+Eventually, each player declares the 5 islands "set":
 ## ![player1_set_islands](images/player1_set_islands.png)
 ## ![player2_set_islands](images/player2_set_islands.png)
 ## ![player1_react_set_islands](images/player1_react_set_islands.png)
-Each player must then make a guess in turn:
+Then, starting with player1, each player must make a guess **in turn**:
 ## ![player1_guess1](images/player1_guess1.png)
 A feedback will show what the opponent's guess was:
 ## ![player2_react_guess1](images/player2_react_guess1.png)
