@@ -41,33 +41,33 @@ Then, clone `islands_text_client` from GitHub and compile it:
   - mix deps.get
   - mix compile
 
-From folder `islands_engine`, you then run the engine in node `:islands@<hostname>` specifying short name **islands**:
+You would then run the engine in node `:islands@<hostname>` specifying short name **islands**:
 
   - cd islands_engine
   - iex --sname **islands** -S mix
   - :observer.start() # optional to observe the game(s) being played
 
-The first player (player1) starts the game from a different node with any short name (here **game1_player1**):
+Player1 starts the game from a different node using any short name (here **_game1_player1_**):
 
   - cd islands_text_client
-  - iex --sname **game1_player1** -S mix
+  - iex --sname **_game1_player1_** -S mix
   - Islands.TextClient.start("**_player1_name_**")
 
-The second player (player2) joins the game from yet another node with any short name (here **game1_player2**):
+Player2 joins the game from yet another node using any short name (here **_game1_player2_**):
 
   - cd islands_text_client
-  - iex --sname **game1_player2** -S mix
+  - iex --sname **_game1_player2_** -S mix
   - Islands.TextClient.join("**_player1_name_**", "**_player2_name_**")
 
 Any number of games can be played simultaneously in this fashion.
 
 ## Example of a game's events in sequence
-We start the Islands Engine specifying short name **islands** (required):
+We start the Islands Engine using short name **islands** (required):
 ## ![engine_node](images/engine_node.png)
-Player1 starts the game specifying short name **game1_player1** (for example):
+Player1 starts the game using short name **_game1_player1_** (for example):
 ## ![player1_node](images/player1_node.png)
 ## ![player1_start](images/player1_start.png)
-Player2 joins the game specifying short name **game1_player2** (for example):
+Player2 joins the game using short name **_game1_player2_** (for example):
 ## ![player2_node](images/player2_node.png)
 ## ![player2_join](images/player2_join.png)
 A feedback will notify player1 that an opponent has joined the game:
