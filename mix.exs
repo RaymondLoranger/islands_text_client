@@ -4,7 +4,7 @@ defmodule IslandsTextClient.MixProject do
   def project do
     [
       app: :islands_text_client,
-      version: "0.1.19",
+      version: "0.1.20",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       name: "Islands Text Client",
@@ -23,7 +23,7 @@ defmodule IslandsTextClient.MixProject do
 
   defp description do
     """
-    Text client for the Islands game.
+    Text client for the Game of Islands.
     """
   end
 
