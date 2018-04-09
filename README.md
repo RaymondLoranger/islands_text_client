@@ -87,5 +87,4 @@ A feedback will show what the opponent's guess was:
 ## ![player1_react_guess1](images/player1_react_guess1.png)
 ## ![player1_atoll_forested](images/player1_atoll_forested.png)
 ## ![player2_react_atoll_forested](images/player2_react_atoll_forested.png)
-Testing this...
-## ![start_join](images/start_join.png)
+Etcetera until one player wins and the other looses...
