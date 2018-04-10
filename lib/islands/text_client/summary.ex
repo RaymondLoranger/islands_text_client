@@ -8,7 +8,7 @@ defmodule Islands.TextClient.Summary do
   alias IO.ANSI.Table
   alias Islands.Engine.{Grid, Tally}
   alias Islands.TextClient.State
-  alias Islands.TextClient.Summary.Message
+  alias Islands.TextClient.Summary.{Message, Score}
 
   @spec display(State.t(), ANSI.ansilist()) :: State.t()
   def display(state, message \\ [])
@@ -24,9 +24,18 @@ defmodule Islands.TextClient.Summary do
   @spec do_display(ANSI.ansilist(), State.t()) :: State.t()
   defp do_display(
          message,
-         %State{tally: %Tally{board: board, guesses: guesses}} = state
+         %State{
+           tally: %Tally{
+             board: board,
+             guesses: guesses,
+             board_score: board_score,
+             guesses_score: guesses_score
+           }
+         } = state
        ) do
     message |> ANSI.format() |> IO.puts()
+    board_score |> Score.for() |> ANSI.format() |> IO.puts()
+    guesses_score |> Score.for() |> ANSI.format() |> IO.puts()
     board |> Grid.to_maps() |> Table.format()
     guesses |> Grid.to_maps() |> Table.format(margins: [left: 35, top: -12])
     state

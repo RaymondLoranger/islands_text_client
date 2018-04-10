@@ -16,7 +16,7 @@ defmodule Islands.TextClient.Player.React.GameOver do
     message |> ANSI.format() |> IO.puts()
     Engine.end_game(game_name)
     clear_messages()
-    exit(:normal)
+    Process.exit(self(), :normal)
   end
 
   @spec message(State.t()) :: ANSI.ansilist()

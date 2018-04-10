@@ -27,7 +27,7 @@ defmodule Islands.TextClient.Player do
     |> IO.puts()
 
     GameOver.clear_messages()
-    exit(:normal)
+    Process.exit(self(), :normal)
   end
 
   defp continue(state) do
