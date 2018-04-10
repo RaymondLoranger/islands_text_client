@@ -10,6 +10,8 @@ defmodule Islands.TextClient.Summary do
   alias Islands.TextClient.State
   alias Islands.TextClient.Summary.{Message, Score}
 
+  @margins [margins: [left: 35, top: -12]]
+
   @spec display(State.t(), ANSI.ansilist()) :: State.t()
   def display(state, message \\ [])
 
@@ -37,7 +39,11 @@ defmodule Islands.TextClient.Summary do
     board_score |> Score.for() |> ANSI.format() |> IO.puts()
     guesses_score |> Score.for() |> ANSI.format() |> IO.puts()
     board |> Grid.to_maps() |> Table.format()
-    guesses |> Grid.to_maps() |> Table.format(margins: [left: 35, top: -12])
+    guesses |> Grid.to_maps() |> Table.format(@margins)
+    # Local function instead of default one...
+    # fun = &Islands.TextClient.Summary.Format.for/1
+    # board |> Grid.to_maps(fun) |> Table.format()
+    # guesses |> Grid.to_maps(fun) |> Table.format(@margins)
     state
   end
 end
