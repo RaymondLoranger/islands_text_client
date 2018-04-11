@@ -65,12 +65,15 @@ Any number of games can be played simultaneously in this fashion.
 We launch the Islands Engine in node **islands** (required):
 ## ![engine_node](images/engine_node.png)
 Player1 (Adam) starts the game from node **_client1_** (for example):
-## ![player1_node_start](images/player1_node_start.png)
+## ![player1_node](images/player1_node.png)
+## ![player1_start](images/player1_start.png)
 Player2 (Eve) joins the game from node **_client2_** (for example):
-## ![player2_node_join](images/player2_node_join.png)
+## ![player2_node](images/player2_node.png)
+## ![player2_join](images/player2_join.png)
 A feedback notifies player1 that an opponent has joined the game:
 ## ![player1_react_join](images/player1_react_join.png)
 Player1 positions the 5 islands on the board (can be in any order):
+## ![player1_help](images/player1_help.png)
 ## ![player1_atoll_positioned](images/player1_atoll_positioned.png)
 ## ![player1_dot_positioned](images/player1_dot_positioned.png)
 ## ![player1_l_shape_positioned](images/player1_l_shape_positioned.png)
@@ -95,5 +98,9 @@ A feedback will show what the opponent's guess was:
 ## ![player2_guess2](images/player2_guess2.png)
 ## ![player1_react_guess2](images/player1_react_guess2.png)
 Etcetera until one player wins and the other loses...
-## ![player1_won](images/player1_won.png)
-## ![player2_lost](images/player2_lost.png)
+## ![player1_guess_last-1](images/player1_guess_last-1.png)
+## ![player2_react_guess_last-1](images/player2_react_guess_last-1.png)
+## ![player2_guess_last](images/player2_guess_last.png)
+## ![player1_react_guess_last](images/player1_react_guess_last.png)
+## ![player1_guess_last](images/player1_guess_last.png)
+## ![player2_react_guess_last](images/player2_react_guess_last.png)
