@@ -65,20 +65,20 @@ Any number of games can be played simultaneously in this fashion.
 We start the Islands Engine using short name **islands** (required):
 ## ![engine_node](images/engine_node.png)
 Player1 starts the game using short name **_game1_player1_** (for example):
-## ![player1_node](images/player1_node.png)
-## ![player1_start](images/player1_start.png)
+## ![player1_node_start](images/player1_node_start.png)
 Player2 joins the game using short name **_game1_player2_** (for example):
-## ![player2_node](images/player2_node.png)
-## ![player2_join](images/player2_join.png)
+## ![player2_node_join](images/player2_node_join.png)
 A feedback will notify player1 that an opponent has joined the game:
 ## ![player1_react_join](images/player1_react_join.png)
 Each player must then position the 5 islands on the board (in any order):
 ## ![player1_atoll_positioned](images/player1_atoll_positioned.png)
-## ![player2_atoll_positioned](images/player2_atoll_positioned.png)
+## ![player1_dot_positioned](images/player1_dot_positioned.png)
+## ![player1_l_shape_positioned](images/player1_l_shape_positioned.png)
+## ![player1_s_shape_positioned](images/player1_s_shape_positioned.png)
 ## ![player1_square_positioned](images/player1_square_positioned.png)
-## ![player2_square_positioned](images/player2_square_positioned.png)
 Eventually, each player declares the 5 islands "set":
 ## ![player1_set_islands](images/player1_set_islands.png)
+## ![player2_all_positioned](images/player2_all_positioned.png)
 ## ![player2_set_islands](images/player2_set_islands.png)
 ## ![player1_react_set_islands](images/player1_react_set_islands.png)
 Then, starting with player1, each player must make a guess **in turn**:
@@ -87,6 +87,10 @@ A feedback will show what the opponent's guess was:
 ## ![player2_react_guess1](images/player2_react_guess1.png)
 ## ![player2_guess1](images/player2_guess1.png)
 ## ![player1_react_guess1](images/player1_react_guess1.png)
-## ![player1_atoll_forested](images/player1_atoll_forested.png)
-## ![player2_react_atoll_forested](images/player2_react_atoll_forested.png)
+## ![player1_guess2](images/player1_guess2.png)
+## ![player2_react_guess2](images/player2_react_guess2.png)
+## ![player2_guess2](images/player2_guess2.png)
+## ![player1_react_guess2](images/player1_react_guess2.png)
 Etcetera until one player wins and the other loses...
+## ![player1_won](images/player1_won.png)
+## ![player2_lost](images/player2_lost.png)
