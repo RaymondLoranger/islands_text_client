@@ -61,7 +61,7 @@ Player2 joins the game from yet another node using any short name (here **_game1
 
 Any number of games can be played simultaneously in this fashion.
 
-## Example of a game's events in sequence
+## Example
 We launch the Islands Engine in node **islands** (required):
 ## ![engine_node](images/engine_node.png)
 Player1 (Adam) starts the game from node **_client1_** (for example):
@@ -72,8 +72,9 @@ Player2 (Eve) joins the game from node **_client2_** (for example):
 ## ![player2_join](images/player2_join.png)
 A feedback notifies player1 that an opponent has joined the game:
 ## ![player1_react_join](images/player1_react_join.png)
-Player1 positions the 5 islands on the board (can be in any order):
+A player can ask for help to know how to make a move:
 ## ![player1_help](images/player1_help.png)
+Player1 positions the 5 islands on the board (can be in any order):
 ## ![player1_atoll_positioned](images/player1_atoll_positioned.png)
 ## ![player1_dot_positioned](images/player1_dot_positioned.png)
 ## ![player1_l_shape_positioned](images/player1_l_shape_positioned.png)
