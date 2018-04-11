@@ -80,13 +80,13 @@ Player1 positions the 5 islands on the board (can be in any order):
 ## ![player1_s_shape_positioned](images/player1_s_shape_positioned.png)
 ## ![player1_square_positioned](images/player1_square_positioned.png)
 Player1 declares his islands "set":
-## ![player1_set_islands](images/player1_set_islands.png)
+## ![player1_set](images/player1_set.png)
 Player2 positions all her islands randomly in a single move:
 ## ![player2_all_positioned](images/player2_all_positioned.png)
 Player2 declares her islands "set":
-## ![player2_set_islands](images/player2_set_islands.png)
+## ![player2_set](images/player2_set.png)
 A feedback notifies player1 that his opponent has set her islands:
-## ![player1_react_set_islands](images/player1_react_set_islands.png)
+## ![player1_react_set](images/player1_react_set.png)
 Then, starting with player1, each player must make a guess **in turn**:
 ## ![player1_guess1](images/player1_guess1.png)
 A feedback will show what the opponent's guess was:
