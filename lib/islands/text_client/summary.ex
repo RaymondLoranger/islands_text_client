@@ -40,7 +40,7 @@ defmodule Islands.TextClient.Summary do
     guesses_score |> Score.for() |> ANSI.format() |> IO.puts()
     board |> Grid.to_maps() |> Table.format()
     guesses |> Grid.to_maps() |> Table.format(@margins)
-    # Local function instead of default one...
+    # Default function => &Islands.Engine.Grid.Format.for/1
     # fun = &Islands.TextClient.Summary.Format.for/1
     # board |> Grid.to_maps(fun) |> Table.format()
     # guesses |> Grid.to_maps(fun) |> Table.format(@margins)
