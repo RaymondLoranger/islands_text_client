@@ -2,7 +2,7 @@ defmodule Islands.TextClient.Summary.Message do
   @moduledoc false
 
   alias IO.ANSI.Plus, as: ANSI
-  alias Islands.Engine.Game
+  alias Islands.Engine.Server
   alias Islands.TextClient.State
 
   alias Islands.TextClient.Summary.Message.{
@@ -18,7 +18,7 @@ defmodule Islands.TextClient.Summary.Message do
     Stopping
   }
 
-  @spec for(State.t(), Game.response()) :: ANSI.ansilist()
+  @spec for(State.t(), Server.response()) :: ANSI.ansilist()
   def for(state, response)
   def for(state, {:ok, :player2_added}), do: Player2Added.message(state)
   def for(state, {:ok, :island_positioned}), do: IslandPositioned.message(state)
