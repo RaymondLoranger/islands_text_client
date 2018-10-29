@@ -2,7 +2,7 @@ defmodule Islands.TextClient.Summary.Message.IslandPositioned do
   @moduledoc false
 
   alias IO.ANSI.Plus, as: ANSI
-  alias Islands.Engine.Tally
+  alias Islands.Engine.Game.Tally
   alias Islands.TextClient.State
   alias Islands.TextClient.Summary.Message.{Island, Point}
 

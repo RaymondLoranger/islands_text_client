@@ -4,7 +4,7 @@ defmodule Islands.TextClient.RemoteProcedureCall do
   use PersistConfig
 
   alias Islands.Engine
-  alias Islands.Engine.Tally
+  alias Islands.Engine.Game.Tally
 
   @node Application.get_env(@app, :islands_node)
 

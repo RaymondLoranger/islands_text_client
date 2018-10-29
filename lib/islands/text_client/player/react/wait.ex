@@ -3,7 +3,7 @@ defmodule Islands.TextClient.Player.React.Wait do
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine
-  alias Islands.Engine.State, as: StateMachine
+  alias Islands.Engine.Game.State, as: StateMachine
   alias Islands.TextClient.State
 
   @spec for(State.t(), StateMachine.game_state(), String.t()) :: State.t()

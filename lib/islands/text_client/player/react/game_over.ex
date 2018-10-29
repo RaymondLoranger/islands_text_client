@@ -3,7 +3,7 @@ defmodule Islands.TextClient.Player.React.GameOver do
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine
-  alias Islands.Engine.Tally
+  alias Islands.Engine.Game.Tally
   alias Islands.TextClient.Player.React.GameOver.Message
   alias Islands.TextClient.{State, Summary}
 

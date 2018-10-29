@@ -5,7 +5,7 @@ defmodule Islands.TextClient.Player do
   @moduledoc false
 
   alias IO.ANSI.Plus, as: ANSI
-  alias Islands.Engine.Tally
+  alias Islands.Engine.Game.Tally
   alias Islands.TextClient.Player.React
   alias Islands.TextClient.Player.React.GameOver
   alias Islands.TextClient.{Mover, Prompter, State, Summary}

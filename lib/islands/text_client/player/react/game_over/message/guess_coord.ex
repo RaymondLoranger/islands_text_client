@@ -2,7 +2,7 @@ defmodule Islands.TextClient.Player.React.GameOver.Message.GuessCoord do
   @moduledoc false
 
   alias IO.ANSI.Plus, as: ANSI
-  alias Islands.Engine.Tally
+  alias Islands.Engine.Game.Tally
   alias Islands.TextClient.State
 
   @spec message(State.t()) :: ANSI.ansilist()

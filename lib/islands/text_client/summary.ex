@@ -6,7 +6,7 @@ defmodule Islands.TextClient.Summary do
 
   alias IO.ANSI.Plus, as: ANSI
   alias IO.ANSI.Table
-  alias Islands.Engine.{Grid, Tally}
+  alias Islands.Engine.Game.{Grid, Tally}
   alias Islands.TextClient.State
   alias Islands.TextClient.Summary.{Message, Score}
 

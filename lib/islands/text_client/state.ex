@@ -6,7 +6,8 @@ defmodule Islands.TextClient.State do
 
   alias __MODULE__
   alias Islands.Engine
-  alias Islands.Engine.{Game, Tally}
+  alias Islands.Engine.Game.Tally
+  alias Islands.Engine.Game
 
   @enforce_keys [:game_name, :player_name, :player_id, :move, :tally]
   defstruct [:game_name, :player_name, :player_id, :move, :tally]
