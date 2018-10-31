@@ -8,7 +8,7 @@ defmodule Islands.TextClient do
   @book_ref Application.get_env(@app, :book_ref)
 
   @moduledoc """
-  Text client for the Game of Islands.
+  Text client for the _Game of Islands_.
   \n##### #{@book_ref}
   """
 
@@ -26,8 +26,8 @@ defmodule Islands.TextClient do
   - `cd islands_text_client`
   - `iex --sname client1 -S mix`
 
-  Player1 (`Eve`) starts a game (`Skyfall`) from her node like so:
-  - `Islands.TextClient.start("Skyfall", "Eve")`
+  Player1 (`Eve`) starts a game (`Eden`) from her node like so:
+  - `Islands.TextClient.start("Eden", "Eve")`
   """
   defdelegate start(game_name, player_name), to: Interact
 
@@ -38,8 +38,8 @@ defmodule Islands.TextClient do
   - `cd islands_text_client`
   - `iex --sname client2 -S mix`
 
-  Player2 (`Adam`) joins game `Skyfall` from his node like so:
-  - `Islands.TextClient.join("Skyfall", "Adam")`
+  Player2 (`Adam`) joins game `Eden` from his node like so:
+  - `Islands.TextClient.join("Eden", "Adam")`
   """
   defdelegate join(game_name, player_name), to: Interact
 end
