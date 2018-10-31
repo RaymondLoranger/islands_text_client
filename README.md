@@ -47,17 +47,31 @@ You would then run the engine in node `:islands@<hostname>` specifying short nam
   - iex --sname **islands** -S mix
   - :observer.start() # optional to observe the game(s) being played
 
-Player1 starts the game from a different node using any short name (here **_game1_player1_**):
+Player1 starts the game from a different node using any short name (here **game1_player1**):
 
   - cd islands_text_client
-  - iex --sname **_game1_player1_** -S mix
-  - Islands.TextClient.start("**_player1_name_**")
+  - iex --sname **game1_player1** -S mix
+  - ~~Islands.TextClient.start("player1_name")~~
+  - Islands.TextClient.start("game_name", "player1_name")
 
-Player2 joins the game from yet another node using any short name (here **_game1_player2_**):
+  Example:
 
   - cd islands_text_client
-  - iex --sname **_game1_player2_** -S mix
-  - Islands.TextClient.join("**_player1_name_**", "**_player2_name_**")
+  - iex --sname client1 -S mix
+  - Islands.TextClient.start("Eden", "Adam")
+
+Player2 joins the game from yet another node using any short name (here **game1_player2**):
+
+  - cd islands_text_client
+  - iex --sname **game1_player2** -S mix
+  - ~~Islands.TextClient.join("player1_name", "player2_name")~~
+  - Islands.TextClient.join("game_name", "player2_name")
+
+  Example:
+
+  - cd islands_text_client
+  - iex --sname client2 -S mix
+  - Islands.TextClient.join("Eden", "Eve")
 
 Any number of games can be played simultaneously in this fashion.
 

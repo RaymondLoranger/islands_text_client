@@ -20,9 +20,6 @@ defmodule Islands.TextClient.State do
           tally: Tally.t()
         }
 
-  @spec init(String.t(), Game.player_id()) :: t
-  def init(game_name, player_id), do: init(game_name, player_id, game_name)
-
   @spec init(String.t(), Game.player_id(), String.t()) :: t
   def init(game_name, player_id, player_name) do
     %State{
