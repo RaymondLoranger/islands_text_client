@@ -14,34 +14,9 @@ defmodule Islands.TextClient do
 
   alias __MODULE__.Interact
 
-  @doc """
-  Lets player1 start a game.
-
-  App `islands_engine` must run in node with short name `islands`...
-  - `cd islands_engine`
-  - `iex --sname islands -S mix`
-  - `:observer.start() # optional`
-
-  Player1 runs in a node with any short name (here `client1`)...
-  - `cd islands_text_client`
-  - `iex --sname client1 -S mix`
-
-  Player1 (`Adam`) starts a game (`Eden`) from his node like so:
-  - `Islands.TextClient.start("Eden", "Adam")`
-  """
-  @spec start(String.t(), String.t()) :: no_return
+  # @spec start(String.t(), String.t()) :: no_return
   defdelegate start(game_name, player1_name), to: Interact
 
-  @doc """
-  Lets player2 join a game.
-
-  Player2 runs in a node with any short name (here `client2`)...
-  - `cd islands_text_client`
-  - `iex --sname client2 -S mix`
-
-  Player2 (`Eve`) joins game `Eden` from her node like so:
-  - `Islands.TextClient.join("Eden", "Eve")`
-  """
-  @spec join(String.t(), String.t()) :: no_return
+  # @spec join(String.t(), String.t()) :: no_return
   defdelegate join(game_name, player2_name), to: Interact
 end
