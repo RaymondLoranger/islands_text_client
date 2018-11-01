@@ -26,8 +26,8 @@ defmodule Islands.TextClient do
   - `cd islands_text_client`
   - `iex --sname client1 -S mix`
 
-  Player1 (`Eve`) starts a game (`Eden`) from her node like so:
-  - `Islands.TextClient.start("Eden", "Eve")`
+  Player1 (`Adam`) starts a game (`Eden`) from his node like so:
+  - `Islands.TextClient.start("Eden", "Adam")`
   """
   @spec start(String.t(), String.t()) :: no_return
   defdelegate start(game_name, player1_name), to: Interact
@@ -39,8 +39,8 @@ defmodule Islands.TextClient do
   - `cd islands_text_client`
   - `iex --sname client2 -S mix`
 
-  Player2 (`Adam`) joins game `Eden` from his node like so:
-  - `Islands.TextClient.join("Eden", "Adam")`
+  Player2 (`Eve`) joins game `Eden` from her node like so:
+  - `Islands.TextClient.join("Eden", "Eve")`
   """
   @spec join(String.t(), String.t()) :: no_return
   defdelegate join(game_name, player2_name), to: Interact
