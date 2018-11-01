@@ -29,7 +29,8 @@ defmodule Islands.TextClient do
   Player1 (`Eve`) starts a game (`Eden`) from her node like so:
   - `Islands.TextClient.start("Eden", "Eve")`
   """
-  defdelegate start(game_name, player_name), to: Interact
+  @spec start(String.t(), String.t()) :: no_return
+  defdelegate start(game_name, player1_name), to: Interact
 
   @doc """
   Lets player2 join a game.
@@ -41,5 +42,6 @@ defmodule Islands.TextClient do
   Player2 (`Adam`) joins game `Eden` from his node like so:
   - `Islands.TextClient.join("Eden", "Adam")`
   """
-  defdelegate join(game_name, player_name), to: Interact
+  @spec join(String.t(), String.t()) :: no_return
+  defdelegate join(game_name, player2_name), to: Interact
 end
