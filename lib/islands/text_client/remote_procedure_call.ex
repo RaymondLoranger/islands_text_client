@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.RemoteProcedureCall do
-  @moduledoc false
-
   use PersistConfig
 
   alias IO.ANSI.Plus, as: ANSI

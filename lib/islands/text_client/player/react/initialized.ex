@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Player.React.Initialized do
-  @moduledoc false
-
   alias Islands.TextClient.Player.React.Wait
   alias Islands.TextClient.State
 

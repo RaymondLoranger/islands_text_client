@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Summary.Message.Island do
-  @moduledoc false
-
   alias Islands.Engine.Island
 
   @spec for(Island.type()) :: String.t()

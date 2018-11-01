@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Summary.Message do
-  @moduledoc false
-
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game.Server
   alias Islands.TextClient.State

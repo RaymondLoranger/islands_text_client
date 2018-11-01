@@ -1,8 +1,7 @@
 defmodule Islands.TextClient.Summary do
-  # @moduledoc """
-  # Displays a summary of the Islands game.
-  # """
-  @moduledoc false
+  @moduledoc """
+  Displays the summary of a _Game of Islands_.
+  """
 
   alias IO.ANSI.Plus, as: ANSI
   alias IO.ANSI.Table

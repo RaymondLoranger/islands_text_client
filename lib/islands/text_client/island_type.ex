@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.IslandType do
-  @moduledoc false
-
   alias Islands.Engine.Island
 
   @spec for(String.codepoint()) :: Island.type() | {:error, atom}

@@ -1,8 +1,7 @@
 defmodule Islands.TextClient.Interact do
-  # @moduledoc """
-  # Interacts with a client playing the Islands game.
-  # """
-  @moduledoc false
+  @moduledoc """
+  Interacts with a client playing the _Game of Islands_.
+  """
 
   alias Islands.TextClient.{Player, RemoteProcedureCall, State}
 

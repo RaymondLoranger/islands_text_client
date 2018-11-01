@@ -1,8 +1,7 @@
 defmodule Islands.TextClient.Player do
-  # @moduledoc """
-  # Models an Islands game player.
-  # """
-  @moduledoc false
+  @moduledoc """
+  Models a _Game of Islands_ player.
+  """
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game.Tally

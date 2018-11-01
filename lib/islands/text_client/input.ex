@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Input do
-  @moduledoc false
-
   use PersistConfig
 
   alias Islands.TextClient.Player.React.GameOver

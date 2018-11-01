@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Player.React.Wait do
-  @moduledoc false
-
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine
   alias Islands.Engine.Game.State, as: StateMachine

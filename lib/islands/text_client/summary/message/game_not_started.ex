@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Summary.Message.GameNotStarted do
-  @moduledoc false
-
   alias IO.ANSI.Plus, as: ANSI
 
   @spec message(String.t()) :: ANSI.ansilist()

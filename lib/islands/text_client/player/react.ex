@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Player.React do
-  @moduledoc false
-
   alias Islands.Engine.Game.State, as: StateMachine
 
   alias Islands.TextClient.Player.React.{

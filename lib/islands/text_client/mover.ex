@@ -1,8 +1,7 @@
 defmodule Islands.TextClient.Mover do
-  # @moduledoc """
-  # Makes an Islands game move.
-  # """
-  @moduledoc false
+  @moduledoc """
+  Makes a _Game of Islands_ move.
+  """
 
   use PersistConfig
 

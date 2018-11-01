@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Player.React.GameOver do
-  @moduledoc false
-
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine
   alias Islands.Engine.Game.Tally

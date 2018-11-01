@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Player.React.Player2Turn do
-  @moduledoc false
-
   alias Islands.TextClient.Player.React.Wait
   alias Islands.TextClient.{State, Summary}
 

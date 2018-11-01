@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Player.React.GameOver.Message.Other do
-  @moduledoc false
-
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.TextClient.State
 

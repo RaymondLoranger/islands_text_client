@@ -1,8 +1,7 @@
 defmodule Islands.TextClient.State do
-  # @moduledoc """
-  # Holds the state of a text client playing an Islands game.
-  # """
-  @moduledoc false
+  @moduledoc """
+  Holds the state of a text client playing the _Game of Islands_.
+  """
 
   alias __MODULE__
   alias Islands.Engine

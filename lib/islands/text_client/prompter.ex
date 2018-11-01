@@ -1,8 +1,7 @@
 defmodule Islands.TextClient.Prompter do
-  # @moduledoc """
-  # Prompts an Islands game player.
-  # """
-  @moduledoc false
+  @moduledoc """
+  Prompts a _Game of Islands_ player.
+  """
 
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.TextClient.{Input, State, Summary}

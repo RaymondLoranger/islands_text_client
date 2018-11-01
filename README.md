@@ -27,7 +27,7 @@ The first player to forest all of her opponent’s islands is the winner.
 
 ## Usage
 
-To play the Game of Islands, clone `islands_engine` from GitHub and compile it:
+To play the _Game of Islands_, clone `islands_engine` from GitHub and compile it:
 
   - git clone https://github.com/RaymondLoranger/islands_engine
   - cd islands_engine
@@ -73,7 +73,7 @@ Player2 joins the game from yet another node using any short name (here **game1_
   - iex --sname client2 -S mix
   - Islands.TextClient.join("Eden", "Eve")
 
-Any number of games can be played simultaneously in this fashion.
+Multiple games can be played simultaneously in this fashion.
 
 ## Example
 We launch the Islands Engine in node **islands** (required):

@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Summary.Score do
-  @moduledoc false
-
   alias IO.ANSI.Plus, as: ANSI
 
   @spec for({atom, non_neg_integer, non_neg_integer}) :: ANSI.ansilist()

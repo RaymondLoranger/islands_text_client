@@ -1,6 +1,4 @@
 defmodule Islands.TextClient.Player.React.PlayersSet do
-  @moduledoc false
-
   alias Islands.Engine.Game.Tally
   alias Islands.TextClient.Player.React.Wait
   alias Islands.TextClient.{State, Summary}
