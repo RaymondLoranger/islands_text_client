@@ -1,15 +1,10 @@
 defmodule Islands.TextClient.RemoteProcedureCall do
   use PersistConfig
 
+  alias __MODULE__.{GameAlreadyStarted, GameAlreadyUnderway, GameNotStarted}
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game.Tally
   alias Islands.Engine
-
-  alias Islands.TextClient.Summary.Message.{
-    GameAlreadyStarted,
-    GameAlreadyUnderway,
-    GameNotStarted
-  }
 
   @node Application.get_env(@app, :islands_node)
 
@@ -32,6 +27,7 @@ defmodule Islands.TextClient.RemoteProcedureCall do
         self() |> Process.exit(:normal)
 
       error ->
+        IO.inspect(error, label: "*** error ***")
         exit(error)
     end
   end

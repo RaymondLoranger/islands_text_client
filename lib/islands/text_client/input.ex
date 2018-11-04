@@ -12,13 +12,11 @@ defmodule Islands.TextClient.Input do
   @island_type_codes Application.get_env(@app, :island_type_codes)
 
   @spec check(t, State.t()) :: State.t() | no_return
-  def check({:error, reason}, state) do
-    GameOver.end_game(["Game ended: #{reason}"], state)
-  end
+  def check({:error, reason}, state),
+    do: GameOver.end_game(["Game ended: #{reason}"], state)
 
-  def check(:eof, state) do
-    GameOver.end_game(["Looks like you gave up."], state)
-  end
+  def check(:eof, state),
+    do: GameOver.end_game(["Looks like you gave up."], state)
 
   def check(input, %State{} = state) do
     input

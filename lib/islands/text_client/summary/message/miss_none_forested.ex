@@ -1,8 +1,8 @@
 defmodule Islands.TextClient.Summary.Message.MissNoneForested do
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game.Tally
+  alias Islands.TextClient.Summary.Point
   alias Islands.TextClient.State
-  alias Islands.TextClient.Summary.Message.Point
 
   @spec message(State.t()) :: ANSI.ansilist()
   def message(%State{
@@ -12,7 +12,7 @@ defmodule Islands.TextClient.Summary.Message.MissNoneForested do
     [
       :dark_green_background,
       :light_white,
-      "Your guess #{Point.for(row, col)} => miss."
+      "Your guess #{Point.format(row, col)} => miss."
     ]
   end
 
@@ -22,7 +22,7 @@ defmodule Islands.TextClient.Summary.Message.MissNoneForested do
     [
       :dark_green_background,
       :light_white,
-      "Opponent's guess #{Point.for(row, col)} => miss."
+      "Opponent's guess #{Point.format(row, col)} => miss."
     ]
   end
 end

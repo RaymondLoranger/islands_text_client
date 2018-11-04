@@ -4,9 +4,9 @@ defmodule Islands.TextClient.State do
   """
 
   alias __MODULE__
-  alias Islands.Engine
   alias Islands.Engine.Game.Tally
   alias Islands.Engine.Game
+  alias Islands.Engine
 
   @enforce_keys [:game_name, :player_name, :player_id, :move, :tally]
   defstruct [:game_name, :player_name, :player_id, :move, :tally]
@@ -15,12 +15,12 @@ defmodule Islands.TextClient.State do
           game_name: String.t(),
           player_name: String.t(),
           player_id: Game.player_id(),
-          move: [String.codepoint() | integer | String.t()],
+          move: [String.codepoint() | pos_integer | String.t()],
           tally: Tally.t()
         }
 
-  @spec init(String.t(), Game.player_id(), String.t()) :: t
-  def init(game_name, player_id, player_name) do
+  @spec new(String.t(), Game.player_id(), String.t()) :: t
+  def new(game_name, player_id, player_name) do
     %State{
       game_name: game_name,
       player_name: player_name,

@@ -1,14 +1,14 @@
 defmodule Islands.TextClient.Player.React.GameOver do
   alias IO.ANSI.Plus, as: ANSI
-  alias Islands.Engine
   alias Islands.Engine.Game.Tally
+  alias Islands.Engine
   alias Islands.TextClient.Player.React.GameOver.Message
   alias Islands.TextClient.{State, Summary}
 
   @spec end_game(State.t()) :: no_return
   def end_game(%State{} = state), do: state |> message() |> end_game(state)
 
-  @spec end_game(ANSI.ansilist(), State.t()) :: true
+  @spec end_game(ANSI.ansilist(), State.t()) :: no_return
   def end_game(message, %State{game_name: game_name} = state) do
     Summary.display(state)
     message |> ANSI.format() |> IO.puts()
@@ -18,9 +18,8 @@ defmodule Islands.TextClient.Player.React.GameOver do
   end
 
   @spec message(State.t()) :: ANSI.ansilist()
-  def message(%State{tally: %Tally{request: request}} = state) do
-    Message.for(state, request)
-  end
+  def message(%State{tally: %Tally{request: request}} = state),
+    do: Message.message_for(state, request)
 
   @spec clear_messages :: :ok
   def clear_messages do

@@ -10,9 +10,8 @@ defmodule Islands.TextClient.Prompter do
   def accept_move(state, message \\ [])
   def accept_move(state, []), do: do_accept_move(state)
 
-  def accept_move(state, message) do
-    state |> Summary.display(message) |> do_accept_move()
-  end
+  def accept_move(state, message),
+    do: state |> Summary.display(message) |> do_accept_move()
 
   # Private functions
 

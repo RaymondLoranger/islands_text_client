@@ -1,8 +1,8 @@
 defmodule Islands.TextClient.Summary.Message.HitIslandForested do
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game.Tally
+  alias Islands.TextClient.Summary.{Island, Point}
   alias Islands.TextClient.State
-  alias Islands.TextClient.Summary.Message.{Island, Point}
 
   @spec message(State.t()) :: ANSI.ansilist()
   def message(%State{
@@ -15,8 +15,8 @@ defmodule Islands.TextClient.Summary.Message.HitIslandForested do
     [
       :dark_green_background,
       :light_white,
-      "Your guess #{Point.for(row, col)} ",
-      "=> #{Island.for(island_type)} forested."
+      "Your guess #{Point.format(row, col)} ",
+      "=> #{Island.format(island_type)} forested."
     ]
   end
 
@@ -29,8 +29,8 @@ defmodule Islands.TextClient.Summary.Message.HitIslandForested do
     [
       :dark_green_background,
       :light_white,
-      "Opponent's guess #{Point.for(row, col)} ",
-      "=> #{Island.for(island_type)} forested."
+      "Opponent's guess #{Point.format(row, col)} ",
+      "=> #{Island.format(island_type)} forested."
     ]
   end
 end

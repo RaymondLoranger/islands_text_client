@@ -10,7 +10,7 @@ defmodule Islands.TextClient.Interact do
       when is_binary(game_name) and is_binary(player_name) do
     game_name
     |> RemoteProcedureCall.new_game(player_name)
-    |> State.init(:player1, player_name)
+    |> State.new(:player1, player_name)
     |> Player.play()
   end
 
@@ -19,7 +19,7 @@ defmodule Islands.TextClient.Interact do
       when is_binary(game_name) and is_binary(player_name) do
     game_name
     |> RemoteProcedureCall.add_player(player_name)
-    |> State.init(:player2, player_name)
+    |> State.new(:player2, player_name)
     |> Player.play()
   end
 end

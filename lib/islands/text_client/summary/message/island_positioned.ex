@@ -1,8 +1,8 @@
 defmodule Islands.TextClient.Summary.Message.IslandPositioned do
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game.Tally
+  alias Islands.TextClient.Summary.{Island, Point}
   alias Islands.TextClient.State
-  alias Islands.TextClient.Summary.Message.{Island, Point}
 
   @spec message(State.t()) :: ANSI.ansilist()
   def message(%State{
@@ -13,7 +13,7 @@ defmodule Islands.TextClient.Summary.Message.IslandPositioned do
     [
       :dark_green_background,
       :light_white,
-      "#{Island.for(island_type)} positioned at #{Point.for(row, col)}."
+      "#{Island.format(island_type)} positioned at #{Point.format(row, col)}."
     ]
   end
 end

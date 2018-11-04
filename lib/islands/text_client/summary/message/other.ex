@@ -8,7 +8,10 @@ defmodule Islands.TextClient.Summary.Message.Other do
     [
       :dark_green_background,
       :light_white,
-      "#{inspect(request)} => #{inspect(response)}"
+      "Unknown response...",
+      :reset,
+      "\n#{inspect(request, pretty: true)} => ",
+      "\n#{inspect(response, pretty: true)}"
     ]
   end
 end

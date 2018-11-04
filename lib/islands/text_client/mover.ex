@@ -16,7 +16,7 @@ defmodule Islands.TextClient.Mover do
       when code in @island_type_codes and row in @board_range and
              col in @board_range do
     %State{game_name: game_name, player_id: player_id} = state
-    island_type = IslandType.for(code)
+    island_type = IslandType.island_type_for(code)
     tally = Engine.position_island(game_name, player_id, island_type, row, col)
     put_in(state.tally, tally)
   end

@@ -8,7 +8,8 @@ defmodule Islands.TextClient.Player.React.GameOver.Message.Other do
       :fuchsia_background,
       :light_white,
       "Game over for an unknown reason...",
-      "State: #{inspect(state, pretty: true)}"
+      :reset,
+      "\nState: #{inspect(state, pretty: true)}"
     ]
   end
 end
