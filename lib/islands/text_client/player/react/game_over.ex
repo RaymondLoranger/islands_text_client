@@ -19,7 +19,7 @@ defmodule Islands.TextClient.Player.React.GameOver do
 
   @spec message(State.t()) :: ANSI.ansilist()
   def message(%State{tally: %Tally{request: request}} = state),
-    do: Message.message_for(state, request)
+    do: Message.new(state, request)
 
   @spec clear_messages :: :ok
   def clear_messages do

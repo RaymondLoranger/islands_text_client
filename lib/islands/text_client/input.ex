@@ -1,6 +1,7 @@
 defmodule Islands.TextClient.Input do
   use PersistConfig
 
+  alias Islands.TextClient.Input.RandomGuess
   alias Islands.TextClient.Player.React.GameOver
   alias Islands.TextClient.{Prompter, State}
 
@@ -35,9 +36,7 @@ defmodule Islands.TextClient.Input do
              else: (_ -> Prompter.accept_move(state, @invalid_move_message))
 
       [] ->
-        row = Enum.random(@board_range)
-        col = Enum.random(@board_range)
-        put_in(state.move, [row, col])
+        put_in(state.move, RandomGuess.pick_guess(state))
 
       [move] when move in ["all", "set", "stop"] ->
         put_in(state.move, [move])
