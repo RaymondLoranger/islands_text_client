@@ -19,14 +19,18 @@ defmodule Islands.TextClient.Prompter do
 
   @spec do_accept_move(State.t()) :: State.t() | no_return
   defp do_accept_move(%State{player_name: player_name} = state) do
-    # Clear :stdio buffer...
-    spawn(fn ->
-      Process.group_leader() |> GenServer.call(:contents, @timeout_in_ms)
-    end)
+    flush_stdio()
 
     [:light_white, "#{player_name}, your move (or help):", :reset, " "]
     |> ANSI.format()
     |> IO.gets()
     |> Input.check(state)
+  end
+
+  @spec flush_stdio :: true
+  defp flush_stdio do
+    pid = spawn(fn -> IO.read(:all) end)
+    Process.sleep(@timeout_in_ms)
+    Process.exit(pid, :kill)
   end
 end
