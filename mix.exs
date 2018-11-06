@@ -50,6 +50,7 @@ defmodule Islands.TextClient.MixProject do
       {:mix_tasks,
        github: "RaymondLoranger/mix_tasks", only: :dev, runtime: false},
       {:persist_config, "~> 0.1"},
+      {:io_ansi_plus, "~> 0.1"},
       {:io_ansi_table, "~> 0.4"},
       {:islands_engine, "~> 0.1"},
       {:earmark, "~> 1.0", only: :dev},
