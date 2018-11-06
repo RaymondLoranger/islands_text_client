@@ -18,12 +18,7 @@ defmodule Islands.TextClient.Player do
 
   @spec continue(State.t()) :: no_return
   defp continue(%State{tally: %Tally{game_state: :game_over}} = state) do
-    state
-    |> Summary.display()
-    |> GameOver.message()
-    |> ANSI.format()
-    |> IO.puts()
-
+    state |> Summary.display() |> GameOver.message() |> ANSI.puts()
     GameOver.clear_messages()
     self() |> Process.exit(:normal)
   end

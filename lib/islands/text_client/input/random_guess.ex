@@ -25,6 +25,6 @@ defmodule Islands.TextClient.Input.RandomGuess do
       |> Enum.reject(&MapSet.member?(misses, &1))
       |> Enum.random()
 
-    [row, col] |> IO.inspect(label: "*** [row, col] ***")
+    [row, col]
   end
 end

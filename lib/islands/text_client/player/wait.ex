@@ -6,13 +6,11 @@ defmodule Islands.TextClient.Player.Wait do
 
   @spec wait_for(State.t(), StateMachine.game_state(), String.t()) :: State.t()
   def wait_for(state, game_state, phrase) do
-    [
+    ANSI.puts([
       :free_speech_red_background,
       :light_white,
       "#{state.player_name}, please wait for #{phrase}..."
-    ]
-    |> ANSI.format()
-    |> IO.puts()
+    ])
 
     wait_for(game_state)
     put_in(state.tally, Engine.tally(state.game_name, state.player_id))

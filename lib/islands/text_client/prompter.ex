@@ -22,8 +22,7 @@ defmodule Islands.TextClient.Prompter do
     flush_stdio()
 
     [:light_white, "#{player_name}, your move (or help):", :reset, " "]
-    |> ANSI.format()
-    |> IO.gets()
+    |> ANSI.gets()
     |> Input.check(state)
   end
 

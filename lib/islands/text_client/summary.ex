@@ -27,9 +27,9 @@ defmodule Islands.TextClient.Summary do
          message,
          %State{tally: %Tally{board: board, guesses: guesses}} = state
        ) do
-    message |> ANSI.format() |> IO.puts()
-    board |> Score.new() |> Message.new() |> ANSI.format() |> IO.puts()
-    guesses |> Score.new() |> Message.new() |> ANSI.format() |> IO.puts()
+    ANSI.puts(message)
+    board |> Score.new() |> Message.new() |> ANSI.puts()
+    guesses |> Score.new() |> Message.new() |> ANSI.puts()
     board |> Grid.new() |> Grid.to_maps() |> Table.format()
     guesses |> Grid.new() |> Grid.to_maps() |> Table.format(@margins)
     # Default function => &Islands.Engine.Game.Grid.Tile.new/1

@@ -19,11 +19,7 @@ defmodule Islands.TextClient.RemoteProcedureCall do
         game_name
 
       {:error, {:already_started, _pid}} ->
-        game_name
-        |> GameAlreadyStarted.message()
-        |> ANSI.format()
-        |> IO.puts()
-
+        game_name |> GameAlreadyStarted.message() |> ANSI.puts()
         self() |> Process.exit(:normal)
 
       error ->
@@ -43,19 +39,11 @@ defmodule Islands.TextClient.RemoteProcedureCall do
         game_name
 
       %Tally{response: {:error, :player2_already_added}} ->
-        game_name
-        |> GameAlreadyUnderway.message()
-        |> ANSI.format()
-        |> IO.puts()
-
+        game_name |> GameAlreadyUnderway.message() |> ANSI.puts()
         self() |> Process.exit(:normal)
 
       {:badrpc, {:EXIT, {:noproc, _}}} ->
-        game_name
-        |> GameNotStarted.message()
-        |> ANSI.format()
-        |> IO.puts()
-
+        game_name |> GameNotStarted.message() |> ANSI.puts()
         self() |> Process.exit(:normal)
 
       error ->
