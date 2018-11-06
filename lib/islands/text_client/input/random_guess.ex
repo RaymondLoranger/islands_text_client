@@ -13,16 +13,13 @@ defmodule Islands.TextClient.Input.RandomGuess do
         %State{tally: %Tally{guesses: %Guesses{hits: hits, misses: misses}}} =
           _state
       ) do
-    coords =
-      for row <- @board_range, col <- @board_range do
+    %Coord{row: row, col: col} =
+      for row <- @board_range, col <- @board_range, into: MapSet.new() do
         {:ok, coord} = Coord.new(row, col)
         coord
       end
-
-    %Coord{row: row, col: col} =
-      coords
-      |> Enum.reject(&MapSet.member?(hits, &1))
-      |> Enum.reject(&MapSet.member?(misses, &1))
+      |> MapSet.difference(hits)
+      |> MapSet.difference(misses)
       |> Enum.random()
 
     [row, col]
