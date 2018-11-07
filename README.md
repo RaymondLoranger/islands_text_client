@@ -77,7 +77,7 @@ Multiple games can be played simultaneously in this fashion.
 
 ## Notes
 
-When starting a game, a player can specify automatic mode with a pause duration
+When starting a game, a player can specify "auto mode" and a pause duration
 (in milliseconds) between moves:
 
 Example:
@@ -86,7 +86,8 @@ Example:
   - iex --sname client1 -S mix
   - Islands.TextClient.start("Eden", "Adam", mode: :auto, pause: 5000)
 
-Likewise when joining a game, a player can specify automatic mode with a pause duration (in milliseconds) between moves:
+Likewise when joining a game, a player can specify "auto mode" with a pause
+duration (in milliseconds) between moves:
 
 Example:
 
@@ -94,9 +95,9 @@ Example:
   - iex --sname client2 -S mix
   - Islands.TextClient.start("Eden", "Eve", mode: :auto, pause: 3000)
 
-  The default mode is `:manual` and the default pause is `1` millisecond.
+  The default mode is `:manual` and the default pause is 1 millisecond.
 
-  Any combinations of modes is possible.
+  Any combination of modes is possible for the two players.
 
 ## Example
 

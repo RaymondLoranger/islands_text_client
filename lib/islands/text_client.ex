@@ -32,8 +32,8 @@ defmodule Islands.TextClient do
   ## Options
 
     - `:mode` - (`:manual` or `:auto`) specifies whether player1 will play
-    in manual or automatic mode
-    - `:pause` - (positive integer) specifies the duration in milliseconds of the pause between moves in automatic mode (should be between 1 and 5,000)
+    in manual or auto mode; defaults to `:manual`.
+    - `:pause` - (positive integer) specifies the duration in milliseconds of the pause between moves in auto mode (should be between 1 and 9,999); defaults to 1 millisecond.
   """
   @spec start(String.t(), String.t(), Keyword.t()) :: no_return
   defdelegate start(game_name, player1_name, options \\ []), to: Interact
@@ -51,8 +51,8 @@ defmodule Islands.TextClient do
   ## Options
 
     - `:mode` - (`:manual` or `:auto`) specifies whether player2 will play
-    in manual or automatic mode
-    - `:pause` - (positive integer) specifies the duration in milliseconds of the pause between moves in automatic mode (should be between 1 and 5,000)
+    in manual or auto mode; defaults to `:manual`.
+    - `:pause` - (positive integer) specifies the duration in milliseconds of the pause between moves in auto mode (should be between 1 and 9,999); defaults to 1 millisecond.
   """
   @spec join(String.t(), String.t(), Keyword.t()) :: no_return
   defdelegate join(game_name, player2_name, options \\ []), to: Interact
