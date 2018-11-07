@@ -18,7 +18,7 @@ defmodule Islands.TextClient.Summary.Tile do
   def new(:hit), do: format(:islamic_green, ">h<")
   def new(:miss), do: format(:mortar, "<m>")
   def new(:board_miss), do: format(:mortar, "<m>")
-  def new(nil), do: format(:dodger_blue, "<o>")
+  def new(nil), do: format(:deep_sky_blue, "<o>")
 
   ## Private functions
 

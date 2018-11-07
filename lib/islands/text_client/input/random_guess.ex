@@ -7,21 +7,21 @@ defmodule Islands.TextClient.Input.RandomGuess do
   alias Islands.TextClient.State
 
   @board_range Application.get_env(@app, :board_range)
+  @create_empty_board_set Application.get_env(@app, :create_empty_board_set)
+  @empty_board_set @create_empty_board_set.(@board_range)
 
-  @spec pick_guess(State.t()) :: [Coord.row() | Coord.col()]
-  def pick_guess(
+  @dialyzer {:nowarn_function, new: 1}
+  @spec new(State.t()) :: String.t()
+  def new(
         %State{tally: %Tally{guesses: %Guesses{hits: hits, misses: misses}}} =
           _state
       ) do
     %Coord{row: row, col: col} =
-      for row <- @board_range, col <- @board_range, into: MapSet.new() do
-        {:ok, coord} = Coord.new(row, col)
-        coord
-      end
+      @empty_board_set
       |> MapSet.difference(hits)
       |> MapSet.difference(misses)
       |> Enum.random()
 
-    [row, col]
+    "#{row} #{col}"
   end
 end

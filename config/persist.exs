@@ -1,6 +1,18 @@
 use Mix.Config
 
+alias Islands.Engine.Coord
+
 config :islands_text_client, board_range: 1..10
+
+config :islands_text_client,
+  create_empty_board_set: fn range ->
+    for row <- range, col <- range, into: MapSet.new() do
+      {:ok, coord} = Coord.new(row, col)
+      coord
+    end
+  end
+
+config :islands_text_client, default_options: [mode: :manual, pause: 1]
 
 config :islands_text_client,
   help_message: [
@@ -73,3 +85,4 @@ config :islands_text_client, island_type_codes: ["a", "d", "l", "s", "q"]
 islands_node = List.to_atom('islands@' ++ hostname)
 
 config :islands_text_client, islands_node: islands_node
+config :islands_text_client, pause_range: 1..9_999

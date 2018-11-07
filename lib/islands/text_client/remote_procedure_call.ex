@@ -23,7 +23,7 @@ defmodule Islands.TextClient.RemoteProcedureCall do
         self() |> Process.exit(:normal)
 
       error ->
-        IO.inspect(error, label: "*** error ***")
+        IO.inspect(error, label: "*** :rpc.call error ***")
         exit(error)
     end
   end
@@ -47,7 +47,7 @@ defmodule Islands.TextClient.RemoteProcedureCall do
         self() |> Process.exit(:normal)
 
       error ->
-        IO.inspect(error, label: "*** error ***")
+        IO.inspect(error, label: "*** :rpc.call error ***")
         exit(error)
     end
   end

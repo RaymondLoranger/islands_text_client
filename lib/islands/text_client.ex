@@ -28,9 +28,15 @@ defmodule Islands.TextClient do
 
   Player1 (`Adam`) starts a game (`Eden`) from his node like so:
   - `Islands.TextClient.start("Eden", "Adam")`
+
+  ## Options
+
+    - `:mode` - (`:manual` or `:auto`) specifies whether player1 will play
+    in manual or automatic mode
+    - `:pause` - (positive integer) specifies the duration in milliseconds of the pause between moves in automatic mode (should be between 1 and 5,000)
   """
-  @spec start(String.t(), String.t()) :: no_return
-  defdelegate start(game_name, player1_name), to: Interact
+  @spec start(String.t(), String.t(), Keyword.t()) :: no_return
+  defdelegate start(game_name, player1_name, options \\ []), to: Interact
 
   @doc """
   Lets player2 join a game.
@@ -41,7 +47,13 @@ defmodule Islands.TextClient do
 
   Player2 (`Eve`) joins game `Eden` from her node like so:
   - `Islands.TextClient.join("Eden", "Eve")`
+
+  ## Options
+
+    - `:mode` - (`:manual` or `:auto`) specifies whether player2 will play
+    in manual or automatic mode
+    - `:pause` - (positive integer) specifies the duration in milliseconds of the pause between moves in automatic mode (should be between 1 and 5,000)
   """
-  @spec join(String.t(), String.t()) :: no_return
-  defdelegate join(game_name, player2_name), to: Interact
+  @spec join(String.t(), String.t(), Keyword.t()) :: no_return
+  defdelegate join(game_name, player2_name, options \\ []), to: Interact
 end

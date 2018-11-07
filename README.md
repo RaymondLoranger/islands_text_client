@@ -54,7 +54,7 @@ Player1 starts the game from a different node using any short name (here **game1
   - ~~Islands.TextClient.start("player1_name")~~
   - Islands.TextClient.start("game_name", "player1_name")
 
-  Example:
+Example:
 
   - cd islands_text_client
   - iex --sname client1 -S mix
@@ -67,7 +67,7 @@ Player2 joins the game from yet another node using any short name (here **game1_
   - ~~Islands.TextClient.join("player1_name", "player2_name")~~
   - Islands.TextClient.join("game_name", "player2_name")
 
-  Example:
+Example:
 
   - cd islands_text_client
   - iex --sname client2 -S mix
@@ -75,7 +75,31 @@ Player2 joins the game from yet another node using any short name (here **game1_
 
 Multiple games can be played simultaneously in this fashion.
 
+## Notes
+
+When starting a game, a player can specify automatic mode with a pause duration
+(in milliseconds) between moves:
+
+Example:
+
+  - cd islands_text_client
+  - iex --sname client1 -S mix
+  - Islands.TextClient.start("Eden", "Adam", mode: :auto, pause: 5000)
+
+Likewise when joining a game, a player can specify automatic mode with a pause duration (in milliseconds) between moves:
+
+Example:
+
+  - cd islands_text_client
+  - iex --sname client2 -S mix
+  - Islands.TextClient.start("Eden", "Eve", mode: :auto, pause: 3000)
+
+  The default mode is `:manual` and the default pause is `1` millisecond.
+
+  Any combinations of modes is possible.
+
 ## Example
+
 We launch the Islands Engine in node **islands** (required):
 ## ![engine_node](images/engine_node.png)
 Player1 (Adam) starts the game from node **_client1_** (for example):
