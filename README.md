@@ -93,7 +93,7 @@ Example:
 
   - cd islands_text_client
   - iex --sname client2 -S mix
-  - Islands.TextClient.start("Eden", "Eve", mode: :auto, pause: 3000)
+  - Islands.TextClient.join("Eden", "Eve", mode: :auto, pause: 3000)
 
   The default mode is `:manual` and the default pause is 1 millisecond.
 
