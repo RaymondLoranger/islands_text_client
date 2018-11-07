@@ -77,7 +77,7 @@ Multiple games can be played simultaneously in this fashion.
 
 ## Notes
 
-When starting a game, a player can specify "auto mode" and a pause duration
+When starting a game, a player can specify "auto mode" with a pause duration
 (in milliseconds) between moves:
 
 Example:
