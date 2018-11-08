@@ -5,7 +5,7 @@ alias Islands.Engine.Coord
 config :islands_text_client, board_range: 1..10
 
 config :islands_text_client,
-  create_empty_board_set: fn range ->
+  create_full_board_set: fn range ->
     for row <- range, col <- range, into: MapSet.new() do
       {:ok, coord} = Coord.new(row, col)
       coord
