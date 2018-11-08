@@ -1,7 +1,13 @@
 defmodule Islands.TextClient.RemoteProcedureCall do
   use PersistConfig
 
-  alias __MODULE__.{GameAlreadyStarted, GameAlreadyUnderway, GameNotStarted}
+  alias __MODULE__.{
+    GameAlreadyStarted,
+    GameAlreadyUnderway,
+    GameNotStarted,
+    IslandsEngineNotStarted
+  }
+
   alias IO.ANSI.Plus, as: ANSI
   alias Islands.Engine.Game.Tally
   alias Islands.Engine
@@ -22,8 +28,11 @@ defmodule Islands.TextClient.RemoteProcedureCall do
         game_name |> GameAlreadyStarted.message() |> ANSI.puts()
         self() |> Process.exit(:normal)
 
+      {:badrpc, :nodedown} ->
+        IslandsEngineNotStarted.message() |> ANSI.puts()
+        self() |> Process.exit(:normal)
+
       error ->
-        IO.inspect(error, label: "*** :rpc.call error ***")
         exit(error)
     end
   end
@@ -46,8 +55,11 @@ defmodule Islands.TextClient.RemoteProcedureCall do
         game_name |> GameNotStarted.message() |> ANSI.puts()
         self() |> Process.exit(:normal)
 
+      {:badrpc, :nodedown} ->
+        IslandsEngineNotStarted.message() |> ANSI.puts()
+        self() |> Process.exit(:normal)
+
       error ->
-        IO.inspect(error, label: "*** :rpc.call error ***")
         exit(error)
     end
   end
