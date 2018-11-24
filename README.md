@@ -52,26 +52,26 @@ Player1 starts the game from a different node using any short name (here **game1
   - cd islands_text_client
   - iex --sname **game1_player1** -S mix
   - ~~Islands.TextClient.start("player1_name")~~
-  - Islands.TextClient.start("game_name", "player1_name")
+  - Islands.Text.Client.start("game_name", "player1_name")
 
 Example:
 
   - cd islands_text_client
   - iex --sname client1 -S mix
-  - Islands.TextClient.start("Eden", "Adam")
+  - Islands.Text.Client.start("Eden", "Adam")
 
 Player2 joins the game from yet another node using any short name (here **game1_player2**):
 
   - cd islands_text_client
   - iex --sname **game1_player2** -S mix
   - ~~Islands.TextClient.join("player1_name", "player2_name")~~
-  - Islands.TextClient.join("game_name", "player2_name")
+  - Islands.Text.Client.join("game_name", "player2_name")
 
 Example:
 
   - cd islands_text_client
   - iex --sname client2 -S mix
-  - Islands.TextClient.join("Eden", "Eve")
+  - Islands.Text.Client.join("Eden", "Eve")
 
 Multiple games can be played simultaneously in this fashion.
 
@@ -84,7 +84,7 @@ Example:
 
   - cd islands_text_client
   - iex --sname client1 -S mix
-  - Islands.TextClient.start("Eden", "Adam", mode: :auto, pause: 5000)
+  - Islands.Text.Client.start("Eden", "Adam", mode: :auto, pause: 5000)
 
 Likewise when joining a game, a player can specify "auto mode" with a pause
 duration (in milliseconds) between moves:
@@ -93,7 +93,7 @@ Example:
 
   - cd islands_text_client
   - iex --sname client2 -S mix
-  - Islands.TextClient.join("Eden", "Eve", mode: :auto, pause: 3000)
+  - Islands.Text.Client.join("Eden", "Eve", mode: :auto, pause: 3000)
 
   The default mode is `:manual` and the default pause is 1 millisecond.
 
