@@ -4,7 +4,7 @@ defmodule Islands.Text.Client.MixProject do
   def project do
     [
       app: :islands_text_client,
-      version: "0.1.76",
+      version: "0.1.77",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       name: "Islands Text Client",
@@ -49,6 +49,7 @@ defmodule Islands.Text.Client.MixProject do
     [
       {:mix_tasks,
        github: "RaymondLoranger/mix_tasks", only: :dev, runtime: false},
+      {:log_reset, "~> 0.1"},
       {:persist_config, "~> 0.1"},
       {:io_ansi_plus, "~> 0.1"},
       {:io_ansi_table, "~> 0.4"},

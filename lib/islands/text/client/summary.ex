@@ -3,6 +3,8 @@ defmodule Islands.Text.Client.Summary do
   Displays the summary of a _Game of Islands_.
   """
 
+  use PersistConfig
+
   alias IO.ANSI.Plus, as: ANSI
   alias IO.ANSI.Table
   alias Islands.Engine.Game.Tally.Score
