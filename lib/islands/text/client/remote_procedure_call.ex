@@ -29,7 +29,11 @@ defmodule Islands.Text.Client.RemoteProcedureCall do
         self() |> Process.exit(:normal)
 
       {:badrpc, :nodedown} ->
-        IslandsEngineNotStarted.message() |> ANSI.puts()
+        IslandsEngineNotStarted.message(:nodedown) |> ANSI.puts()
+        self() |> Process.exit(:normal)
+
+      {:badrpc, {:EXIT, {:undef, _}}} ->
+        IslandsEngineNotStarted.message(:nodeup) |> ANSI.puts()
         self() |> Process.exit(:normal)
 
       error ->
@@ -56,7 +60,11 @@ defmodule Islands.Text.Client.RemoteProcedureCall do
         self() |> Process.exit(:normal)
 
       {:badrpc, :nodedown} ->
-        IslandsEngineNotStarted.message() |> ANSI.puts()
+        IslandsEngineNotStarted.message(:nodedown) |> ANSI.puts()
+        self() |> Process.exit(:normal)
+
+      {:badrpc, {:EXIT, {:undef, _}}} ->
+        IslandsEngineNotStarted.message(:nodeup) |> ANSI.puts()
         self() |> Process.exit(:normal)
 
       error ->
