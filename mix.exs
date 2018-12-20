@@ -4,7 +4,7 @@ defmodule Islands.Text.Client.MixProject do
   def project do
     [
       app: :islands_text_client,
-      version: "0.1.84",
+      version: "0.1.85",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       name: "Islands Text Client",
@@ -29,7 +29,15 @@ defmodule Islands.Text.Client.MixProject do
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README*", "config/persist*.exs"],
+      files: [
+        "lib",
+        "mix.exs",
+        "README*",
+        "config/persist*.exs",
+        "config/dev.exs",
+        "config/prod.exs",
+        "config/test.exs"
+      ],
       maintainers: ["Raymond Loranger"],
       licenses: ["MIT"],
       links: %{"GitHub" => source_url()}
