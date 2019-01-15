@@ -95,7 +95,7 @@ Example:
   - iex --sname client2 -S mix
   - Islands.Text.Client.join("Eden", "Eve", mode: :auto, pause: 3000)
 
-  The default mode is `:manual` and the default pause is 1 millisecond.
+  The default mode is `:manual` and the default pause is `0` milliseconds.
 
   Any combination of modes is possible for the two players.
 

@@ -32,7 +32,7 @@ defmodule Islands.Text.Client.State do
           player_name: String.t(),
           player_id: Game.player_id(),
           mode: :manual | :auto,
-          pause: 1..9_999,
+          pause: 0..10_000,
           move: [String.codepoint() | pos_integer | String.t()],
           tally: Tally.t()
         }

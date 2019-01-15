@@ -12,7 +12,7 @@ config :islands_text_client,
     end
   end
 
-config :islands_text_client, default_options: [mode: :manual, pause: 1]
+config :islands_text_client, default_options: [mode: :manual, pause: 0]
 
 config :islands_text_client,
   help_message: [
@@ -85,4 +85,4 @@ config :islands_text_client, island_type_codes: ["a", "d", "l", "s", "q"]
 islands_node = List.to_atom('islands@' ++ hostname)
 
 config :islands_text_client, islands_node: islands_node
-config :islands_text_client, pause_range: 1..9_999
+config :islands_text_client, pause_range: 0..10_000
