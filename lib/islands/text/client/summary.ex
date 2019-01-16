@@ -34,8 +34,8 @@ defmodule Islands.Text.Client.Summary do
          } = state
        ) do
     ANSI.puts(message)
-    game_name |> Score.players_side(player_id) |> Message.new() |> ANSI.puts()
-    game_name |> Score.opponents_side(player_id) |> Message.new() |> ANSI.puts()
+    game_name |> Score.board_side(player_id) |> Message.puts()
+    game_name |> Score.guesses_side(player_id) |> Message.puts()
     board |> Grid.new() |> Grid.to_maps() |> Table.format()
     guesses |> Grid.new() |> Grid.to_maps() |> Table.format(@margins)
     # Default function => &Islands.Engine.Game.Grid.Tile.new/1

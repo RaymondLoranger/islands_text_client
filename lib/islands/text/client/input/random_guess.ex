@@ -3,7 +3,6 @@ defmodule Islands.Text.Client.Input.RandomGuess do
 
   alias Islands.Engine.Coord
   alias Islands.Engine.Game.Tally
-  alias Islands.Engine.Guesses
   alias Islands.Text.Client.State
 
   @board_range Application.get_env(@app, :board_range)
@@ -12,14 +11,11 @@ defmodule Islands.Text.Client.Input.RandomGuess do
 
   @dialyzer {:nowarn_function, new: 1}
   @spec new(State.t()) :: String.t()
-  def new(
-        %State{tally: %Tally{guesses: %Guesses{hits: hits, misses: misses}}} =
-          _state
-      ) do
+  def new(%State{tally: %Tally{guesses: guesses}} = _state) do
     %Coord{row: row, col: col} =
       @full_board_set
-      |> MapSet.difference(hits)
-      |> MapSet.difference(misses)
+      |> MapSet.difference(guesses.hits)
+      |> MapSet.difference(guesses.misses)
       |> Enum.random()
 
     "#{row} #{col}"

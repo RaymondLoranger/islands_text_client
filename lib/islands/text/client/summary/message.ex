@@ -39,20 +39,22 @@ defmodule Islands.Text.Client.Summary.Message do
   def new(state, {:error, _reason}), do: Error.message(state)
   def new(state, _other), do: Other.message(state)
 
-  @spec new(Score.t()) :: ANSI.ansilist()
-  def new(%Score{type: :player} = score) do
+  @spec puts(Score.t()) :: :ok
+  def puts(%Score{type: :board_side} = score) do
     [
       ["\n", ANSI.cursor_right(8), top_message(score)],
       ["\n", ANSI.cursor_right(8), bottom_message(score)]
     ]
+    |> ANSI.puts()
   end
 
-  def new(%Score{type: :opponent} = score) do
+  def puts(%Score{type: :guesses_side} = score) do
     [
       [ANSI.cursor_up(3)],
       ["\n", ANSI.cursor_right(41), top_message(score)],
       ["\n", ANSI.cursor_right(41), bottom_message(score)]
     ]
+    |> ANSI.puts()
   end
 
   ## Private functions
