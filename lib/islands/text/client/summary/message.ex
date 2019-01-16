@@ -1,8 +1,9 @@
 defmodule Islands.Text.Client.Summary.Message do
+  use PersistConfig
+
   alias IO.ANSI.Plus, as: ANSI
+  alias Islands.Engine.Board.Score
   alias Islands.Engine.Game.Server
-  alias Islands.Engine.Game.Tally.Score
-  alias Islands.Text.Client.State
 
   alias Islands.Text.Client.Summary.Message.{
     AllIslandsPositioned,
@@ -16,6 +17,11 @@ defmodule Islands.Text.Client.Summary.Message do
     Player2Added,
     Stopping
   }
+
+  alias Islands.Text.Client.{IslandType, State}
+
+  @island_type_codes Application.get_env(@app, :island_type_codes)
+  @sp ANSI.cursor_right()
 
   @spec new(State.t(), Server.response()) :: ANSI.ansilist()
   def new(state, response)
@@ -34,27 +40,50 @@ defmodule Islands.Text.Client.Summary.Message do
   def new(state, _other), do: Other.message(state)
 
   @spec new(Score.t()) :: ANSI.ansilist()
-  def new(board_or_guesses)
+  def new(%Score{type: :player} = score) do
+    [
+      ["\n", ANSI.cursor_right(8), top_message(score)],
+      ["\n", ANSI.cursor_right(8), bottom_message(score)]
+    ]
+  end
 
-  def new(%Score{type: :board, hits: hits, misses: misses} = _board),
-    do: ["\n", ANSI.cursor_right(8)] ++ message_end(hits, misses)
-
-  def new(%Score{type: :guesses, hits: hits, misses: misses}),
-    do: [ANSI.cursor_up(1), ANSI.cursor_right(41)] ++ message_end(hits, misses)
+  def new(%Score{type: :opponent} = score) do
+    [
+      [ANSI.cursor_up(3)],
+      ["\n", ANSI.cursor_right(41), top_message(score)],
+      ["\n", ANSI.cursor_right(41), bottom_message(score)]
+    ]
+  end
 
   ## Private functions
 
-  @spec message_end(non_neg_integer, non_neg_integer) :: ANSI.ansilist()
-  defp message_end(hits, misses) do
+  @spec top_message(Score.t()) :: ANSI.ansilist()
+  defp top_message(score) do
     [
-      :chartreuse_yellow,
-      "hits: ",
-      :spring_green,
-      String.pad_leading("#{hits}", 2),
-      :chartreuse_yellow,
-      "   misses: ",
-      :spring_green,
-      String.pad_leading("#{misses}", 2)
+      [:chartreuse_yellow, "hits: "],
+      [:spring_green, String.pad_leading("#{score.hits}", 2)],
+      [:chartreuse_yellow, "   misses: "],
+      [:spring_green, String.pad_leading("#{score.misses}", 2)]
     ]
   end
+
+  @spec bottom_message(Score.t()) :: ANSI.ansilist()
+  defp bottom_message(score) do
+    [
+      [[:reset, :spring_green, :underline], "forested"],
+      [[:reset, @sp, :chartreuse_yellow], "=>"],
+      forested_codes(score)
+    ]
+  end
+
+  @spec forested_codes(Score.t()) :: ANSI.ansilist()
+  defp forested_codes(score) do
+    for code <- @island_type_codes do
+      [attr(IslandType.new(code) in score.forested), code]
+    end
+  end
+
+  @spec attr(boolean) :: ANSI.ansilist()
+  defp attr(true = _forested?), do: [:reset, @sp, :spring_green, :underline]
+  defp attr(false = _forested?), do: [:reset, @sp, :chartreuse_yellow]
 end
