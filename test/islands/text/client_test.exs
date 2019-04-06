@@ -1,8 +1,11 @@
 defmodule Islands.Text.ClientTest do
-  use ExUnit.Case
-  doctest Islands.Text.Client
+  use ExUnit.Case, async: true
+
+  alias Islands.Text.Client
+
+  doctest Client
 
   test "the truth" do
-    assert 1 + 1 == 2
+    assert 1 + 2 == 3
   end
 end

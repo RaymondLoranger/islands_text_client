@@ -1,18 +1,19 @@
-# ┌───────────────────────────────────────────────────────────────────────┐
-# │ Inspired by the book "Functional Web Development" by Lance Halvorsen. │
-# │ Also inspired by the course "Elixir for Programmers" by Dave Thomas.  │
-# └───────────────────────────────────────────────────────────────────────┘
+# ┌──────────────────────────────────────────────────────────────────┐
+# │ Inspired by the course "Elixir for Programmers" by Dave Thomas.  │
+# │ And by the book "Functional Web Development" by Lance Halvorsen. │
+# └──────────────────────────────────────────────────────────────────┘
 defmodule Islands.Text.Client do
   use PersistConfig
 
-  @book_ref Application.get_env(@app, :book_ref)
+  @course_ref Application.get_env(@app, :course_ref)
 
   @moduledoc """
   Text client for the _Game of Islands_.
-  \n##### #{@book_ref}
+  \n##### #{@course_ref}
   """
 
-  alias __MODULE__.Interact
+  alias __MODULE__.{Joiner, Starter}
+  alias Islands.Player
 
   @doc """
   Lets player1 start a game.
@@ -33,10 +34,12 @@ defmodule Islands.Text.Client do
 
     - `:mode` - (`:manual` or `:auto`) specifies whether player1 will play
     in manual or auto mode; defaults to `:manual`.
-    - `:pause` - (nonnegative integer) specifies the duration in milliseconds of the pause between moves in auto mode (should be between 0 and 10,000); defaults to 0 milliseconds.
+    - `:pause` - (nonnegative integer) specifies the duration in milliseconds
+    of the pause between moves in auto mode (should be between 0 and 10,000);
+    defaults to 0 milliseconds.
   """
-  @spec start(String.t(), String.t(), Keyword.t()) :: no_return
-  defdelegate start(game_name, player1_name, options \\ []), to: Interact
+  @spec start(String.t(), String.t(), Player.gender(), Keyword.t()) :: no_return
+  defdelegate start(game_name, player1_name, gender, options \\ []), to: Starter
 
   @doc """
   Lets player2 join a game.
@@ -52,8 +55,10 @@ defmodule Islands.Text.Client do
 
     - `:mode` - (`:manual` or `:auto`) specifies whether player2 will play
     in manual or auto mode; defaults to `:manual`.
-    - `:pause` - (nonnegative integer) specifies the duration in milliseconds of the pause between moves in auto mode (should be between 0 and 10,000); defaults to 0 milliseconds.
+    - `:pause` - (nonnegative integer) specifies the duration in milliseconds
+    of the pause between moves in auto mode (should be between 0 and 10,000);
+    defaults to 0 milliseconds.
   """
-  @spec join(String.t(), String.t(), Keyword.t()) :: no_return
-  defdelegate join(game_name, player2_name, options \\ []), to: Interact
+  @spec join(String.t(), String.t(), Player.gender(), Keyword.t()) :: no_return
+  defdelegate join(game_name, player2_name, gender, options \\ []), to: Joiner
 end

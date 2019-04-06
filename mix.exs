@@ -4,7 +4,7 @@ defmodule Islands.Text.Client.MixProject do
   def project do
     [
       app: :islands_text_client,
-      version: "0.2.13",
+      version: "0.2.14",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       name: "Islands Text Client",
@@ -12,8 +12,7 @@ defmodule Islands.Text.Client.MixProject do
       description: description(),
       package: package(),
       aliases: aliases(),
-      deps: deps(),
-      dialyzer: [plt_add_apps: [:islands_engine]]
+      deps: deps()
     ]
   end
 
@@ -39,7 +38,6 @@ defmodule Islands.Text.Client.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      included_applications: [:islands_engine],
       extra_applications: [:logger]
     ]
   end
@@ -51,10 +49,10 @@ defmodule Islands.Text.Client.MixProject do
        github: "RaymondLoranger/mix_tasks", only: :dev, runtime: false},
       {:log_reset, "~> 0.1"},
       {:persist_config, "~> 0.1"},
-      {:io_ansi_plus, "~> 0.1"},
-      {:io_ansi_table, "~> 0.4"},
-      {:islands_engine, "~> 0.1"},
-      # {:islands_engine, path: "../islands_engine"},
+      {:islands_player, "~> 0.1"},
+      {:islands_client_player, "~> 0.1"},
+      {:islands_client_rpc, "~> 0.1"},
+      {:islands_client_state, "~> 0.1"},
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false},
       {:dialyxir, "~> 0.5", only: :dev, runtime: false}
