@@ -28,7 +28,14 @@ defmodule Islands.Text.Client do
   - `iex --sname client1 -S mix`
 
   Player1 (`Adam`) starts a game (`Eden`) from his node like so:
-  - `Islands.Text.Client.start("Eden", "Adam")`
+  - `Islands.Text.Client.start("Eden", "Adam", :m)`
+
+  ## Parameters
+
+    - `game_name`    - game name (string)
+    - `player1_name` - player1 name (string)
+    - `gender`       - gender as either :f or :m (atom)
+    - `options`      - up to 2 options (keyword)
 
   ## Options
 
@@ -49,7 +56,14 @@ defmodule Islands.Text.Client do
   - `iex --sname client2 -S mix`
 
   Player2 (`Eve`) joins game `Eden` from her node like so:
-  - `Islands.Text.Client.join("Eden", "Eve")`
+  - `Islands.Text.Client.join("Eden", "Eve", :f)`
+
+  ## Parameters
+
+    - `game_name`    - game name (string)
+    - `player2_name` - player2 name (string)
+    - `gender`       - gender as either :f or :m (atom)
+    - `options`      - up to 2 options (keyword)
 
   ## Options
 
