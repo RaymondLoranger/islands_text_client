@@ -47,7 +47,7 @@ defmodule Islands.Text.Client.MixProject do
     [
       {:mix_tasks,
        github: "RaymondLoranger/mix_tasks", only: :dev, runtime: false},
-      {:log_reset, "~> 0.1"},
+      # {:log_reset, "~> 0.1"},
       {:persist_config, "~> 0.1"},
       {:islands_player, "~> 0.1"},
       {:islands_client_player, "~> 0.1"},
