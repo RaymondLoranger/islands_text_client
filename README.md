@@ -23,7 +23,7 @@ for an island have palm trees, the island is forested.
 
 The first player to forest all of her opponent’s islands is the winner.
 
-##### Inspired by the book [Functional Web Development](https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen.</br>Also inspired by the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers) by Dave Thomas.
+##### Inspired by the book [Functional Web Development](https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen.<br>Also inspired by the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers) by Dave Thomas.
 
 ## Usage
 
@@ -51,27 +51,25 @@ Player1 starts the game from a different node using any short name (here **game1
 
   - cd islands_text_client
   - iex --sname **game1_player1** -S mix
-  - ~~Islands.TextClient.start("player1_name")~~
-  - Islands.Text.Client.start("game_name", "player1_name")
+  - Islands.Text.Client.start("game_name", "player1_name", :f | :m)
 
 Example:
 
   - cd islands_text_client
   - iex --sname client1 -S mix
-  - Islands.Text.Client.start("Eden", "Adam")
+  - Islands.Text.Client.start("Eden", "Adam", :m)
 
 Player2 joins the game from yet another node using any short name (here **game1_player2**):
 
   - cd islands_text_client
   - iex --sname **game1_player2** -S mix
-  - ~~Islands.TextClient.join("player1_name", "player2_name")~~
-  - Islands.Text.Client.join("game_name", "player2_name")
+  - Islands.Text.Client.join("game_name", "player2_name", :f | :m)
 
 Example:
 
   - cd islands_text_client
   - iex --sname client2 -S mix
-  - Islands.Text.Client.join("Eden", "Eve")
+  - Islands.Text.Client.join("Eden", "Eve", :f)
 
 Multiple games can be played simultaneously in this fashion.
 
@@ -84,7 +82,7 @@ Example:
 
   - cd islands_text_client
   - iex --sname client1 -S mix
-  - Islands.Text.Client.start("Eden", "Adam", mode: :auto, pause: 5000)
+  - Islands.Text.Client.start("Eden", "Adam", :m, mode: :auto, pause: 5000)
 
 Likewise when joining a game, a player can specify "auto mode" with a pause
 duration (in milliseconds) between moves:
@@ -93,7 +91,7 @@ Example:
 
   - cd islands_text_client
   - iex --sname client2 -S mix
-  - Islands.Text.Client.join("Eden", "Eve", mode: :auto, pause: 3000)
+  - Islands.Text.Client.join("Eden", "Eve", :f, mode: :auto, pause: 3000)
 
   The default mode is `:manual` and the default pause is `0` milliseconds.
 

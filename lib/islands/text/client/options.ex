@@ -1,6 +1,6 @@
 defmodule Islands.Text.Client.Options do
   @moduledoc """
-  Gets the options of the _Game of Islands_.
+  Gets the start/join options of the _Game of Islands_.
   """
 
   @default_options [mode: :manual, pause: 0]
