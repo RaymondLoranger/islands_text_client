@@ -41,7 +41,7 @@ Then, clone **islands_text_client** from GitHub and compile it:
   - mix deps.get
   - mix compile
 
-You would then run the engine in node **:islands@<hostname>** specifying short name **islands**:
+You would then run the engine in node `:islands@<hostname>` specifying short name **islands**:
 
   - cd islands_engine
   - iex --sname **islands** -S mix # short name must be **islands**
@@ -88,4 +88,4 @@ Example:
 ## Video
 
 This video shows a game initially in manual mode and then switched to auto mode:
-[![Game of Islands - Video](assets/player1_guess1.png)](https://photos.app.goo.gl/uJAFHHbfVMSfbXbS7)
+[![Game of Islands - Video](assets/video.jpg)](https://photos.app.goo.gl/uJAFHHbfVMSfbXbS7)
