@@ -41,35 +41,23 @@ Then, clone `islands_text_client` from GitHub and compile it:
   - mix deps.get
   - mix compile
 
-You would then run the engine in node `:islands@<hostname>` specifying short name **islands**:
+You would then run the engine in node `:islands@<hostname>` specifying short name `islands`:
 
   - cd islands_engine
-  - iex --sname **islands** -S mix
-  - :observer.start() # optional to observe the game(s) being played
+  - iex --sname `islands` -S mix # short name must be `islands`
+  - :observer.start # optional to observe the game(s) being played
 
-Player1 starts the game from a different node using any short name (here **game1_player1**):
-
-  - cd islands_text_client
-  - iex --sname **game1_player1** -S mix
-  - Islands.Text.Client.start("game_name", "player1_name", :f | :m)
-
-Example:
+Player1 starts the game from a different node using any short name:
 
   - cd islands_text_client
-  - iex --sname client1 -S mix
-  - Islands.Text.Client.start("Eden", "Adam", :m)
+  - iex --sname `client1` -S mix # short name is `client1` for example
+  - Islands.Text.Client.start("Eden", "Adam", `:m`) # gender is `:m`
 
-Player2 joins the game from yet another node using any short name (here **game1_player2**):
-
-  - cd islands_text_client
-  - iex --sname **game1_player2** -S mix
-  - Islands.Text.Client.join("game_name", "player2_name", :f | :m)
-
-Example:
+Player2 joins the game from yet another node using any short name:
 
   - cd islands_text_client
-  - iex --sname client2 -S mix
-  - Islands.Text.Client.join("Eden", "Eve", :f)
+  - iex --sname `client2` -S mix # short name is `client2` for example
+  - Islands.Text.Client.join("Eden", "Eve", `:f`) # gender is `:f`
 
 Multiple games can be played simultaneously in this fashion.
 
@@ -82,7 +70,7 @@ Example:
 
   - cd islands_text_client
   - iex --sname client1 -S mix
-  - Islands.Text.Client.start("Eden", "Adam", :m, mode: :auto, pause: 5000)
+  - Islands.Text.Client.start("Eden", "Adam", :m, `mode: :auto, pause: 5000`)
 
 Likewise when joining a game, a player can specify "auto mode" with a pause
 duration (in milliseconds) between moves:
@@ -91,54 +79,13 @@ Example:
 
   - cd islands_text_client
   - iex --sname client2 -S mix
-  - Islands.Text.Client.join("Eden", "Eve", :f, mode: :auto, pause: 3000)
+  - Islands.Text.Client.join("Eden", "Eve", :f, `mode: :auto, pause: 3000`)
 
   The default mode is `:manual` and the default pause is `0` milliseconds.
 
   Any combination of modes is possible for the two players.
 
-## Example
+## Video
 
-We launch the Islands Engine in node **islands** (required):
-## ![engine_node](images/engine_node.png)
-Player1 (Adam) starts the game from node **_client1_** (for example):
-## ![player1_node](images/player1_node.png)
-## ![player1_start](images/player1_start.png)
-Player2 (Eve) joins the game from node **_client2_** (for example):
-## ![player2_node](images/player2_node.png)
-## ![player2_join](images/player2_join.png)
-A feedback notifies player1 that an opponent has joined the game:
-## ![player1_react_join](images/player1_react_join.png)
-A player can ask for help to know how to make a move:
-## ![player1_help](images/player1_help.png)
-Player1 positions the 5 islands on the board (can be in any order):
-## ![player1_atoll_positioned](images/player1_atoll_positioned.png)
-## ![player1_dot_positioned](images/player1_dot_positioned.png)
-## ![player1_l_shape_positioned](images/player1_l_shape_positioned.png)
-## ![player1_s_shape_positioned](images/player1_s_shape_positioned.png)
-## ![player1_square_positioned](images/player1_square_positioned.png)
-Player1 declares his islands "set":
-## ![player1_set](images/player1_set.png)
-Player2 positions all her islands randomly in a single move:
-## ![player2_all_positioned](images/player2_all_positioned.png)
-Player2 declares her islands "set":
-## ![player2_set](images/player2_set.png)
-A feedback notifies player1 that his opponent has set her islands:
-## ![player1_react_set](images/player1_react_set.png)
-Then, starting with player1, each player must make a guess **in turn**:
-## ![player1_guess1](images/player1_guess1.png)
-A feedback will show what the opponent's guess was:
-## ![player2_react_guess1](images/player2_react_guess1.png)
-## ![player2_guess1](images/player2_guess1.png)
-## ![player1_react_guess1](images/player1_react_guess1.png)
-## ![player1_guess2](images/player1_guess2.png)
-## ![player2_react_guess2](images/player2_react_guess2.png)
-## ![player2_guess2](images/player2_guess2.png)
-## ![player1_react_guess2](images/player1_react_guess2.png)
-Etcetera until one player wins and the other loses...
-## ![player1_guess_last-1](images/player1_guess_last-1.png)
-## ![player2_react_guess_last-1](images/player2_react_guess_last-1.png)
-## ![player2_guess_last](images/player2_guess_last.png)
-## ![player1_react_guess_last](images/player1_react_guess_last.png)
-## ![player1_guess_last](images/player1_guess_last.png)
-## ![player2_react_guess_last](images/player2_react_guess_last.png)
+This video shows a game initially in manual mode then switched to auto mode:
+## ![demo](assets/demo.mp4)

@@ -23,6 +23,7 @@ perso*
 tree*
 /log
 /.elixir_ls
+/images
 
 # Ignore package tarball (built via "mix hex.build").
 islands_text_client-*.tar
