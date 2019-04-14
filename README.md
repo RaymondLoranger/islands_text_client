@@ -88,4 +88,5 @@ Example:
 ## Video
 
 This video shows a game initially in manual mode then switched to auto mode:
-## ![demo](assets/demo.mp4)
+<video src="assets/demo.mp4" poster="assets/player1_guess1.jpg" width="320" height="200" controls preload></video>
+
