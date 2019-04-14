@@ -4,7 +4,7 @@ defmodule Islands.Text.Client.MixProject do
   def project do
     [
       app: :islands_text_client,
-      version: "0.2.21",
+      version: "0.2.22",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       name: "Islands Text Client",
@@ -60,12 +60,12 @@ defmodule Islands.Text.Client.MixProject do
 
   defp aliases do
     [
-      docs: ["docs", &copy_images/1]
+      docs: ["docs", &copy_assets/1]
     ]
   end
 
-  defp copy_images(_) do
-    File.cp_r("images", "doc/images", fn src, dst ->
+  defp copy_assets(_) do
+    File.cp_r("assets", "doc/assets", fn src, dst ->
       # Always true...
       src || dst
 
