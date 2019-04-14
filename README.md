@@ -50,13 +50,13 @@ You would then run the engine in node `:islands@<hostname>` specifying short nam
 Player1 starts the game from a different node using any short name:
 
   - cd islands_text_client
-  - iex --sname **client1** -S mix # short name is **client1** for example
+  - iex --sname **client1** -S mix # short name is **client1**
   - Islands.Text.Client.start("Eden", "Adam", **:m**) # gender is **:m**
 
 Player2 joins the game from yet another node using any short name:
 
   - cd islands_text_client
-  - iex --sname **client2** -S mix # short name is **client2** for example
+  - iex --sname **client2** -S mix # short name is **client2**
   - Islands.Text.Client.join("Eden", "Eve", **:f**) # gender is **:f**
 
 Multiple games can be played simultaneously in this fashion.
