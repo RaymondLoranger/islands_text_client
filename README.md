@@ -88,4 +88,4 @@ Example:
 ## Video
 
 This video shows a game initially in manual mode then switched to auto mode:
-[![Audi R8](http://img.youtube.com/vi/KOxbO0EI4MA/0.jpg)](https://www.youtube.com/watch?v=KOxbO0EI4MA "Audi R8")
+[![Audi R8](http://img.youtube.com/vi/KOxbO0EI4MA/0.jpg)](assets/demo.mp4)
