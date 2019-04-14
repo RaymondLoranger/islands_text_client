@@ -89,5 +89,4 @@ Example:
 
 This video shows a game initially in manual mode and then switched to auto mode:
 
-<video src="assets/demo.mp4" poster="video.jpg" width="320" height="200" controls preload></video>
-
+[![Game of Islands - Video](assets/video.jpg)](https://photos.app.goo.gl/uJAFHHbfVMSfbXbS7)
