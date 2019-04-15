@@ -5,11 +5,11 @@
 defmodule Islands.Text.Client do
   use PersistConfig
 
-  @course_ref Application.get_env(@app, :course_ref)
+  @book_and_course_ref Application.get_env(@app, :book_and_course_ref)
 
   @moduledoc """
   Text client for the _Game of Islands_.
-  \n##### #{@course_ref}
+  \n##### #{@book_and_course_ref}
   """
 
   alias __MODULE__.{Joiner, Starter}
