@@ -89,4 +89,4 @@ Example:
 
 This video shows a game initially in manual mode and then switched to auto mode:
 
-<a href="https://photos.app.goo.gl/q2AvWisHL3Q6kcER9" target="_blank" alt="Game of Islands - Video"><img src="assets/video.jpg"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://photos.app.goo.gl/q2AvWisHL3Q6kcER9" alt="Game of Islands"><img src="assets/video.jpg"></a>
