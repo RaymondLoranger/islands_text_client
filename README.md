@@ -89,4 +89,4 @@ Example:
 
 This video shows a game initially in manual mode and then switched to auto mode:
 
-[![Game of Islands - Video](assets/video.jpg)](https://photos.app.goo.gl/q2AvWisHL3Q6kcER9){target="_blank"}
+<a href="https://photos.app.goo.gl/q2AvWisHL3Q6kcER9" target="_blank" alt="Game of Islands - Video">assets/video.jpg</a>
