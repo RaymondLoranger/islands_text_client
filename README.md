@@ -6,8 +6,7 @@ Text client for the _Game of Islands_.
 
 It’s a game for two players, and each player has a board, which consists of a
 grid of one hundred squares. The grid is labeled with the numbers 1 through
-10 across the top for the columns and down the left side for the rows. We name
-individual squares with this row-column combination.
+10 across the top for the columns and down the left side for the rows. Each square is named by its coordinates of the form (row, column).
 
 The players cannot see each other’s boards.
 
