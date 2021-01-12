@@ -3,17 +3,18 @@
 # │ Also inspired by the course "Elixir for Programmers" by Dave Thomas.  │
 # └───────────────────────────────────────────────────────────────────────┘
 defmodule Islands.Text.Client do
-  use PersistConfig
-
-  @book_and_course_ref Application.get_env(@app, :book_and_course_ref)
-
   @moduledoc """
   Text client for the _Game of Islands_.
-  \n##### #{@book_and_course_ref}
+
+  ##### Inspired by the book [Functional Web Development](https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen.
+
+  ##### Also inspired by the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers) by Dave Thomas.
   """
 
+  use PersistConfig
+
   alias __MODULE__.{Joiner, Starter}
-  alias Islands.Player
+  alias Islands.{Game, Player}
 
   @doc """
   Lets player1 start a game.
@@ -45,7 +46,8 @@ defmodule Islands.Text.Client do
     of the pause between moves in auto mode (should be between 0 and 10,000);
     defaults to 0 milliseconds.
   """
-  @spec start(String.t(), String.t(), Player.gender(), Keyword.t()) :: no_return
+  @spec start(Game.name(), Player.name(), Player.gender(), Keyword.t()) ::
+          no_return
   defdelegate start(game_name, player1_name, gender, options \\ []), to: Starter
 
   @doc """
@@ -73,6 +75,19 @@ defmodule Islands.Text.Client do
     of the pause between moves in auto mode (should be between 0 and 10,000);
     defaults to 0 milliseconds.
   """
-  @spec join(String.t(), String.t(), Player.gender(), Keyword.t()) :: no_return
+  @spec join(Game.name(), Player.name(), Player.gender(), Keyword.t()) ::
+          no_return
   defdelegate join(game_name, player2_name, gender, options \\ []), to: Joiner
+
+  @doc """
+  Returns the islands engine node.
+
+  ## Examples
+
+    iex> alias Islands.Text.Client
+    iex> Client.engine_node
+    :islands_engine@rays # :dev or :test environments
+  """
+  @spec engine_node :: node
+  def engine_node, do: get_env(:engine_node)
 end

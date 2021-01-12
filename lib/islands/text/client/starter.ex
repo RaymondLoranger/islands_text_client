@@ -6,13 +6,15 @@ defmodule Islands.Text.Client.Starter do
   import Islands.Text.Client.Guard
 
   alias Islands.Client.{Player, RPC, State}
+  alias Islands.Game
   alias Islands.Player, as: Gamer
+  alias Islands.Text.Client
 
-  @spec start(String.t(), String.t(), Gamer.gender(), Keyword.t()) :: no_return
+  @spec start(Game.name(), Gamer.name(), Gamer.gender(), Keyword.t()) ::
+          no_return
   def start(game_name, player_name, gender, options \\ [])
-      when valid_game_args(game_name, player_name, gender, options) do
-    game_name
-    |> RPC.new_game(player_name, gender)
+      when valid?(game_name, player_name, gender, options) do
+    RPC.new_game(Client.engine_node(), game_name, player_name, gender)
     |> State.new(:player1, player_name, gender, options)
     |> Player.play()
   end
