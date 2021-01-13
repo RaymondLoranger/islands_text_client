@@ -20,16 +20,25 @@ defmodule Islands.Text.Client do
   Lets player1 start a game.
 
   App `islands_engine` must run in node with short name `islands_engine`...
-  - `cd islands_engine`
-  - `iex --sname islands_engine -S mix`
-  - `:observer.start # optional`
+
+  ```
+  cd islands_engine
+  iex --sname islands_engine -S mix
+  :observer.start # optional
+  ```
 
   Player1 runs in a node with any short name...
-  - `cd islands_text_client`
-  - `iex --sname client1 -S mix`
 
-  Player1 (`Adam`) starts a game (`Eden`) from his node like so:
-  - `Islands.Text.Client.start("Eden", "Adam", :m)`
+  ```
+  cd islands_text_client
+  iex --sname client1 -S mix
+  ```
+
+  Player1 starts a game from his node like so:
+
+  ```
+  Islands.Text.Client.start("Eden", "Adam", :m)
+  ```
 
   ## Parameters
 
@@ -44,7 +53,7 @@ defmodule Islands.Text.Client do
     in manual or auto mode; defaults to `:manual`.
     - `:pause` - (nonnegative integer) specifies the duration in milliseconds
     of the pause between moves in auto mode (should be between 0 and 10,000);
-    defaults to 0 milliseconds.
+    defaults to `0` milliseconds.
   """
   @spec start(Game.name(), Player.name(), Player.gender(), Keyword.t()) ::
           no_return
@@ -54,11 +63,17 @@ defmodule Islands.Text.Client do
   Lets player2 join a game.
 
   Player2 runs in a node with any short name...
-  - `cd islands_text_client`
-  - `iex --sname client2 -S mix`
 
-  Player2 (`Eve`) joins game `Eden` from her node like so:
-  - `Islands.Text.Client.join("Eden", "Eve", :f)`
+  ```
+  cd islands_text_client
+  iex --sname client2 -S mix
+  ```
+
+  Player2 joins a game from her node like so:
+
+  ```
+  Islands.Text.Client.join("Eden", "Eve", :f)
+  ```
 
   ## Parameters
 
@@ -73,7 +88,7 @@ defmodule Islands.Text.Client do
     in manual or auto mode; defaults to `:manual`.
     - `:pause` - (nonnegative integer) specifies the duration in milliseconds
     of the pause between moves in auto mode (should be between 0 and 10,000);
-    defaults to 0 milliseconds.
+    defaults to `0` milliseconds.
   """
   @spec join(Game.name(), Player.name(), Player.gender(), Keyword.t()) ::
           no_return
@@ -84,11 +99,10 @@ defmodule Islands.Text.Client do
 
   ## Examples
 
-    iex> alias Islands.Text.Client
-    iex> engine_node = Client.engine_node # short name for :dev or :test
-    iex> inspected_engine_node = inspect(engine_node)
-    iex> "#{inspected_engine_node}" =~ ":islands_engine@"
-    true
+      iex> alias Islands.Text.Client
+      iex> engine_node = Client.engine_node
+      iex> String.slice("#{inspect(engine_node)}", 0..15)
+      ":islands_engine@"
   """
   @spec engine_node :: node
   def engine_node, do: get_env(:engine_node)
