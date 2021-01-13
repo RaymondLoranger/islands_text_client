@@ -42,7 +42,8 @@ Then, clone **islands_text_client** from GitHub and compile it:
   - mix deps.get
   - mix compile
 
-You would then run the engine in node `:islands@<hostname>` specifying short name **islands_engine**:
+You would then run the engine in node `:islands_engine@<hostname>` specifying
+short name **islands_engine**:
 
   - cd islands_engine
   - iex --sname **islands_engine** -S mix
