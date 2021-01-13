@@ -101,8 +101,8 @@ defmodule Islands.Text.Client do
 
       iex> alias Islands.Text.Client
       iex> engine_node = Client.engine_node
-      iex> String.slice("#{inspect(engine_node)}", 0..15)
-      ":islands_engine@"
+      iex> "#{engine_node}" =~ "islands_engine@"
+      true
   """
   @spec engine_node :: node
   def engine_node, do: get_env(:engine_node)
