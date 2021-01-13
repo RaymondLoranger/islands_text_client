@@ -22,9 +22,9 @@ defmodule Islands.Text.Client do
   App `islands_engine` must run in node with short name `islands_engine`...
   - `cd islands_engine`
   - `iex --sname islands_engine -S mix`
-  - `:observer.start # optional to observe the game(s) being played`
+  - `:observer.start # optional`
 
-  Player1 runs in a node with any short name (here `client1`)...
+  Player1 runs in a node with any short name...
   - `cd islands_text_client`
   - `iex --sname client1 -S mix`
 
@@ -53,7 +53,7 @@ defmodule Islands.Text.Client do
   @doc """
   Lets player2 join a game.
 
-  Player2 runs in a node with any short name (here `client2`)...
+  Player2 runs in a node with any short name...
   - `cd islands_text_client`
   - `iex --sname client2 -S mix`
 
