@@ -18,7 +18,7 @@ stay where they are for the rest of the game.
 Once both players have set their islands, they take turns guessing squares
 on their opponent’s board, trying to find the islands. For every correct guess,
 we plant a palm tree on the island at that square. When all the squares
-for an island have palm trees, the island is forested.
+of an island have palm trees, the island is forested.
 
 The first player to forest all of her opponent’s islands is the winner.
 
@@ -42,23 +42,23 @@ Then, clone **islands_text_client** from GitHub and compile it:
   - mix deps.get
   - mix compile
 
-You would then run the engine in node `:islands@<hostname>` specifying short name **islands**:
+You would then run the engine in node `:islands@<hostname>` specifying short name **islands_engine**:
 
   - cd islands_engine
-  - iex --sname **islands** -S mix # short name must be **islands**
-  - :observer.start # optional to observe the game(s) being played
+  - iex --sname **islands_engine** -S mix
+  - :observer.start # optional
 
 Player1 starts the game from a different node using any short name:
 
   - cd islands_text_client
-  - iex --sname **client1** -S mix # short name is **client1**
-  - Islands.Text.Client.start("Eden", "Adam", **:m**) # gender is **:m**
+  - iex --sname **client1** -S mix
+  - Islands.Text.Client.start("Eden", "Adam", **:m**)
 
 Player2 joins the game from yet another node using any short name:
 
   - cd islands_text_client
-  - iex --sname **client2** -S mix # short name is **client2**
-  - Islands.Text.Client.join("Eden", "Eve", **:f**) # gender is **:f**
+  - iex --sname **client2** -S mix
+  - Islands.Text.Client.join("Eden", "Eve", **:f**)
 
 Multiple games can be played simultaneously in this fashion.
 
