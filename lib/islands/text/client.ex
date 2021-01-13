@@ -79,14 +79,16 @@ defmodule Islands.Text.Client do
           no_return
   defdelegate join(game_name, player2_name, gender, options \\ []), to: Joiner
 
-  @doc """
+  @doc ~S"""
   Returns the islands engine node.
 
   ## Examples
 
     iex> alias Islands.Text.Client
-    iex> Client.engine_node
-    :islands_engine@rays # :dev or :test environments
+    iex> engine_node = Client.engine_node # short name for :dev or :test
+    iex> inspected_engine_node = inspect(engine_node)
+    iex> "#{inspected_engine_node}" =~ ":islands_engine@"
+    true
   """
   @spec engine_node :: node
   def engine_node, do: get_env(:engine_node)
