@@ -6,14 +6,25 @@ Text client for the _Game of Islands_.
 
 It’s a game for two players, and each player has a board, which consists of a
 grid of one hundred squares. The grid is labeled with the numbers 1 through
-10 across the top for the columns and down the left side for the rows. Each square is named by its coordinates of the form (row, column).
+10 across the top for the columns and down the left side for the rows. Each
+square is named by its coordinates of the form (row, column).
 
 The players cannot see each other’s boards.
 
 The players have matching sets of islands of various shapes and sizes, which
-they place on their own boards. The players can move the islands around as
-much as they like until they say that they are set. After that, the islands must
-stay where they are for the rest of the game.
+they place on their own boards.
+
+|Island                         |Symbol|Squares|Shape              |
+|-------------------------------|:----:|:-----:|:-----------------:|
+|&nbsp;&nbsp;&nbsp;&nbsp;Atoll  |  A   |   5   |![atoll][atoll]    |
+|&nbsp;&nbsp;&nbsp;&nbsp;S-Shape|  S   |   4   |![s-shape][s-shape]|
+|&nbsp;&nbsp;&nbsp;&nbsp;L-Shape|  L   |   4   |![l-shape][l-shape]|
+|&nbsp;&nbsp;&nbsp;&nbsp;Square |  Q   |   4   |![square][square]  |
+|&nbsp;&nbsp;&nbsp;&nbsp;Dot    |  D   |   1   |![dot][dot]        |
+
+The players can move the islands around as much as they like until they say
+that they are set. After that, the islands must stay where they are for the
+rest of the game.
 
 Once both players have set their islands, they take turns guessing squares
 on their opponent’s board, trying to find the islands. For every correct guess,
@@ -105,4 +116,12 @@ Any combination of modes is possible for the two players.
 
 This video shows a game initially in manual mode and then switched to auto mode:
 
-[![Game of Islands - Video](assets/video.jpg)](https://photos.app.goo.gl/q2AvWisHL3Q6kcER9)
+[![Game of Islands - Video][video]][video-link]
+
+[atoll]: assets/atoll.png
+[s-shape]: assets/s-shape.png
+[l-shape]: assets/l-shape.png
+[square]: assets/square.png
+[dot]: assets/dot.png
+[video]: assets/video.jpg
+[video-link]: https://photos.app.goo.gl/q2AvWisHL3Q6kcER9

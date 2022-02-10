@@ -1,6 +1,6 @@
 defmodule Islands.Text.Client.Joiner do
   @moduledoc """
-  Allows to join the _Game of Islands_.
+  Lets player2 join a game.
   """
 
   import Islands.Text.Client.Guard
@@ -10,6 +10,9 @@ defmodule Islands.Text.Client.Joiner do
   alias Islands.Player, as: Gamer
   alias Islands.Text.Client
 
+  @doc """
+  Lets player2 join a game.
+  """
   @spec join(Game.name(), Gamer.name(), Gamer.gender(), Keyword.t()) ::
           no_return
   def join(game_name, player_name, gender, options \\ [])

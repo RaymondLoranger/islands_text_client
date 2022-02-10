@@ -1,6 +1,6 @@
 defmodule Islands.Text.Client.Starter do
   @moduledoc """
-  Allows to start the _Game of Islands_.
+  Lets player1 start a game.
   """
 
   import Islands.Text.Client.Guard
@@ -10,6 +10,9 @@ defmodule Islands.Text.Client.Starter do
   alias Islands.Player, as: Gamer
   alias Islands.Text.Client
 
+  @doc """
+  Lets player1 start a game.
+  """
   @spec start(Game.name(), Gamer.name(), Gamer.gender(), Keyword.t()) ::
           no_return
   def start(game_name, player_name, gender, options \\ [])
