@@ -19,7 +19,7 @@ defmodule Islands.Text.Client do
   @doc """
   Lets player1 start a game.
 
-  App `islands_engine` must run in node with short name `islands_engine`...
+  App `islands_engine` must run in a node with short name `islands_engine`:
 
   ```
   cd islands_engine
@@ -27,7 +27,7 @@ defmodule Islands.Text.Client do
   :observer.start # optional
   ```
 
-  Player1 runs in a node with any short name...
+  Player1 runs in a node with any short name:
 
   ```
   cd islands_text_client
@@ -44,7 +44,7 @@ defmodule Islands.Text.Client do
 
     - `game_name`    - game name (string)
     - `player1_name` - player1 name (string)
-    - `gender`       - gender as either :f or :m (atom)
+    - `gender`       - gender as either `:f` or `:m` (atom)
     - `options`      - up to 2 options (keyword)
 
   ## Options
@@ -62,7 +62,7 @@ defmodule Islands.Text.Client do
   @doc """
   Lets player2 join a game.
 
-  Player2 runs in a node with any short name...
+  Player2 runs in a node with any short name:
 
   ```
   cd islands_text_client
@@ -79,7 +79,7 @@ defmodule Islands.Text.Client do
 
     - `game_name`    - game name (string)
     - `player2_name` - player2 name (string)
-    - `gender`       - gender as either :f or :m (atom)
+    - `gender`       - gender as either `:f` or `:m` (atom)
     - `options`      - up to 2 options (keyword)
 
   ## Options
