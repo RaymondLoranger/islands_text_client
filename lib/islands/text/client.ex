@@ -17,9 +17,15 @@ defmodule Islands.Text.Client do
   alias Islands.{Game, Player}
 
   @doc """
-  Lets player1 start a game.
+  Lets player1 start a game on a remote node.
 
-  App `islands_engine` must run in a node with short name `islands_engine`:
+  App `:islands_engine` must run on node `:islands_engine@<hostname>` where
+  `<hostname>` is either the full host name if long names are used, or the first
+  part of the full host name if short names are used.
+
+  ### Short names
+
+  Start the engine using a short name:
 
   ```
   cd islands_engine
@@ -27,16 +33,29 @@ defmodule Islands.Text.Client do
   :observer.start # optional
   ```
 
-  Player1 runs in a node with any short name:
+  Player1 starts a game from a different node using a short name:
 
   ```
   cd islands_text_client
   iex --sname client1 -S mix
+  Islands.Text.Client.start("Eden", "Adam", :m)
   ```
 
-  Player1 starts a game from his node like so:
+  ### Long names
+
+  Start the engine using a long name:
 
   ```
+  cd islands_engine
+  iex --name islands_engine@rays.supratech.ca -S mix
+  :observer.start # optional
+  ```
+
+  Player1 starts a game from a different node using a long name:
+
+  ```
+  cd islands_text_client
+  iex --name client1@rays.supratech.ca -S mix
   Islands.Text.Client.start("Eden", "Adam", :m)
   ```
 
@@ -60,18 +79,25 @@ defmodule Islands.Text.Client do
   defdelegate start(game_name, player1_name, gender, options \\ []), to: Starter
 
   @doc """
-  Lets player2 join a game.
+  Lets player2 join a game on a remote node.
 
-  Player2 runs in a node with any short name:
+  ### Short names
+
+  Player2 joins a game from a different node using a short name:
 
   ```
   cd islands_text_client
   iex --sname client2 -S mix
+  Islands.Text.Client.join("Eden", "Eve", :f)
   ```
 
-  Player2 joins a game from her node like so:
+  ### Long names
+
+  Player2 joins a game from a different node using a long name:
 
   ```
+  cd islands_text_client
+  iex --name client2@rays.supratech.ca -S mix
   Islands.Text.Client.join("Eden", "Eve", :f)
   ```
 

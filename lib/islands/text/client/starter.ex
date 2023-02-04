@@ -11,7 +11,7 @@ defmodule Islands.Text.Client.Starter do
   alias Islands.Text.Client
 
   @doc """
-  Lets player1 start a game.
+  Lets player1 start a game on a remote node.
   """
   @spec start(Game.name(), Gamer.name(), Gamer.gender(), Keyword.t()) ::
           no_return

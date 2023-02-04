@@ -11,7 +11,7 @@ defmodule Islands.Text.Client.Joiner do
   alias Islands.Text.Client
 
   @doc """
-  Lets player2 join a game.
+  Lets player2 join a game on a remote node.
   """
   @spec join(Game.name(), Gamer.name(), Gamer.gender(), Keyword.t()) ::
           no_return

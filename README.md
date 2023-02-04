@@ -57,8 +57,13 @@ mix deps.get
 mix compile
 ```
 
-You would then run the engine in node `:islands_engine@<hostname>` specifying
-short name `islands_engine`:
+App `:islands_engine` must run on node `:islands_engine@<hostname>` where
+`<hostname>` is either the full host name if long names are used, or the first
+part of the full host name if short names are used.
+
+### Short names
+
+Start the engine using a short name:
 
 ```
 cd islands_engine
@@ -66,7 +71,7 @@ iex --sname islands_engine -S mix
 :observer.start # optional
 ```
 
-Player1 starts the game from a different node using any short name:
+Player1 starts the game from a different node using a short name:
 
 ```
 cd islands_text_client
@@ -74,7 +79,7 @@ iex --sname client1 -S mix
 Islands.Text.Client.start("Eden", "Adam", :m)
 ```
 
-Player2 joins the game from yet another node using any short name:
+Player2 joins the game from yet another node using a short name:
 
 ```
 cd islands_text_client
@@ -82,7 +87,31 @@ iex --sname client2 -S mix
 Islands.Text.Client.join("Eden", "Eve", :f)
 ```
 
-Multiple games can be played simultaneously in this fashion.
+### Long names
+
+Start the engine using a long name:
+
+```
+cd islands_engine
+iex --name islands_engine@rays.supratech.ca -S mix
+:observer.start # optional
+```
+
+Player1 starts the game from a different node using a long name:
+
+```
+cd islands_text_client
+iex --name client1@rays.supratech.ca -S mix
+Islands.Text.Client.start("Eden", "Adam", :m)
+```
+
+Player2 joins the game from yet another node using a long name:
+
+```
+cd islands_text_client
+iex --name client2@rays.supratech.ca -S mix
+Islands.Text.Client.join("Eden", "Eve", :f)
+```
 
 ## Notes
 
