@@ -6,7 +6,7 @@ defmodule Islands.Text.Client do
   @moduledoc """
   Text client for the _Game of Islands_.
 
-  ##### Inspired by the book [Functional Web Development](https://pragprog.com/titles/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen.
+  ##### Inspired by the book [Functional Web Development](https://pragprog.com/book/titles/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen.
 
   ##### Also inspired by the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers) by Dave Thomas.
   """
