@@ -14,13 +14,13 @@ The players cannot see each other’s boards.
 The players have matching sets of islands of various shapes and sizes, which
 they place on their own boards.
 
-|Island                         |Symbol|Squares|Shape              |
-|-------------------------------|:----:|:-----:|:-----------------:|
-|&nbsp;&nbsp;&nbsp;&nbsp;Atoll  |  A   |   5   |![atoll][atoll]    |
-|&nbsp;&nbsp;&nbsp;&nbsp;S-Shape|  S   |   4   |![s-shape][s-shape]|
-|&nbsp;&nbsp;&nbsp;&nbsp;L-Shape|  L   |   4   |![l-shape][l-shape]|
-|&nbsp;&nbsp;&nbsp;&nbsp;Square |  Q   |   4   |![square][square]  |
-|&nbsp;&nbsp;&nbsp;&nbsp;Dot    |  D   |   1   |![dot][dot]        |
+| Island                          | Symbol | Squares |        Shape        |
+| ------------------------------- | :----: | :-----: | :-----------------: |
+| &nbsp;&nbsp;&nbsp;&nbsp;Atoll   |   A    |    5    |   ![atoll][atoll]   |
+| &nbsp;&nbsp;&nbsp;&nbsp;S-Shape |   S    |    4    | ![s-shape][s-shape] |
+| &nbsp;&nbsp;&nbsp;&nbsp;L-Shape |   L    |    4    | ![l-shape][l-shape] |
+| &nbsp;&nbsp;&nbsp;&nbsp;Square  |   Q    |    4    |  ![square][square]  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Dot     |   D    |    1    |     ![dot][dot]     |
 
 The players can move the islands around as much as they like until they say
 that they are set. After that, the islands must stay where they are for the
@@ -33,7 +33,7 @@ of an island have palm trees, the island is forested.
 
 The first player to forest all of her opponent’s islands is the winner.
 
-##### Inspired by the book [Functional Web Development](https://pragprog.com/book/lhelph/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen.
+##### Inspired by the book [Functional Web Development](https://pragprog.com/book/titles/functional-web-development-with-elixir-otp-and-phoenix) by Lance Halvorsen.
 
 ##### Also inspired by the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers) by Dave Thomas.
 

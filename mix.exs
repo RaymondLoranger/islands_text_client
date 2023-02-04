@@ -4,7 +4,7 @@ defmodule Islands.Text.Client.MixProject do
   def project do
     [
       app: :islands_text_client,
-      version: "0.2.55",
+      version: "0.2.56",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       name: "Islands Text Client",
