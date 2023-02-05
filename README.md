@@ -71,7 +71,7 @@ iex --sname islands_engine -S mix
 :observer.start # optional
 ```
 
-Player1 starts the game from a different node using a short name:
+Player1 starts a game from a different node using a short name:
 
 ```
 cd islands_text_client
@@ -79,7 +79,7 @@ iex --sname client1 -S mix
 Islands.Text.Client.start("Eden", "Adam", :m)
 ```
 
-Player2 joins the game from yet another node using a short name:
+Player2 joins a game from yet another node using a short name:
 
 ```
 cd islands_text_client
@@ -97,7 +97,7 @@ iex --name islands_engine@rays.supratech.ca -S mix
 :observer.start # optional
 ```
 
-Player1 starts the game from a different node using a long name:
+Player1 starts a game from a different node using a long name:
 
 ```
 cd islands_text_client
@@ -105,7 +105,7 @@ iex --name client1@rays.supratech.ca -S mix
 Islands.Text.Client.start("Eden", "Adam", :m)
 ```
 
-Player2 joins the game from yet another node using a long name:
+Player2 joins a game from yet another node using a long name:
 
 ```
 cd islands_text_client

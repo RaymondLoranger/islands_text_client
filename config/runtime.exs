@@ -1,6 +1,6 @@
 import Config
 
-# App `:islands_engine` should run on node `:islands_engine@<hostname>` where
+# App `:islands_engine` must run on node `:islands_engine@<hostname>` where
 # `<hostname>` is either the full host name if long names are used, or the first
 # part of the full host name if short names are used.
 
