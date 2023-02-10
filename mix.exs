@@ -4,7 +4,7 @@ defmodule Islands.Text.Client.MixProject do
   def project do
     [
       app: :islands_text_client,
-      version: "0.2.59",
+      version: "0.2.60",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       name: "Islands Text Client",
@@ -38,6 +38,8 @@ defmodule Islands.Text.Client.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      # App `:islands_engine` must run on node `:islands_engine@<hostname>`.
+      included_applications: [:islands_engine],
       extra_applications: [:logger]
     ]
   end

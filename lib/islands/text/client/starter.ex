@@ -3,7 +3,7 @@ defmodule Islands.Text.Client.Starter do
   Lets player1 start a game.
   """
 
-  import Islands.Text.Client.Guard
+  import Islands.Text.Client.Guard, only: [valid?: 4]
 
   alias Islands.Client.{Player, RPC, State}
   alias Islands.Game

@@ -33,11 +33,11 @@ defmodule Islands.Text.Client do
   :observer.start # optional
   ```
 
-  Player1 starts a game from a different node using a short name:
+  Player1 starts a game from a different node with a short name:
 
   ```
   cd islands_text_client
-  iex --sname client1 -S mix
+  set "MIX_ENV=dev" && iex --sname client1 -S mix
   Islands.Text.Client.start("Eden", "Adam", :m)
   ```
 
@@ -51,11 +51,11 @@ defmodule Islands.Text.Client do
   :observer.start # optional
   ```
 
-  Player1 starts a game from a different node using a long name:
+  Player1 starts a game from a different node with a long name:
 
   ```
   cd islands_text_client
-  iex --name client1@rays.supratech.ca -S mix
+  set "MIX_ENV=prod" && iex --name client1@rays.supratech.ca -S mix
   Islands.Text.Client.start("Eden", "Adam", :m)
   ```
 
@@ -83,21 +83,21 @@ defmodule Islands.Text.Client do
 
   ### Short names
 
-  Player2 joins a game from a different node using a short name:
+  Player2 joins a game from a different node with a short name:
 
   ```
   cd islands_text_client
-  iex --sname client2 -S mix
+  set "MIX_ENV=dev" && iex --sname client2 -S mix
   Islands.Text.Client.join("Eden", "Eve", :f)
   ```
 
   ### Long names
 
-  Player2 joins a game from a different node using a long name:
+  Player2 joins a game from a different node with a long name:
 
   ```
   cd islands_text_client
-  iex --name client2@rays.supratech.ca -S mix
+  set "MIX_ENV=prod" iex --name client2@rays.supratech.ca -S mix
   Islands.Text.Client.join("Eden", "Eve", :f)
   ```
 
@@ -126,7 +126,7 @@ defmodule Islands.Text.Client do
   ## Examples
 
       iex> alias Islands.Text.Client
-      iex> engine_node = Client.engine_node
+      iex> engine_node = Client.engine_node()
       iex> "#{engine_node}" =~ "islands_engine@"
       true
   """
